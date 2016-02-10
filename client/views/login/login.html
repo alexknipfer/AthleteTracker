@@ -1,0 +1,16 @@
+<template name="login">
+  <div class="row">
+    <div class="col s12 m8 l6 offset-l3">
+        <div class="card login-padding">
+          <div class="card-content black-text">
+            <span class="card-title">Login</span> 
+            {{#autoForm schema="LoginSchema" id="loginForm" type="normal"}} 
+            {{>afQuickField name="username"}} 
+            {{>afQuickField name="password" type="password"}}
+            <button class="btn waves-effect login" type="submit">Login</button>
+            {{/autoForm}}
+          </div>
+        </div>
+    </div>
+  </div>
+</template>
