@@ -1,7 +1,6 @@
 Meteor.users.schema = new SimpleSchema({
    username: {
        type: String,
-       regEx: /^[a-z0-9A-Z_]{3,15}$/
    },
    
    emails: {
@@ -16,13 +15,11 @@ Meteor.users.schema = new SimpleSchema({
    
    firstname: {
        type: String,
-       regEx: /^[a-zA-Z_]{3,50}$/,
        optional: true
    },
    
    lastname: {
        type: String,
-       regEx: /^[a-zA-Z_]{2, 50}$/,
        optional: true
    },
    

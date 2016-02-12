@@ -4,3 +4,11 @@ Template.manageStudents.events({
     $('.addStudent').leanModal();
   }
 });
+
+Template.manageStudents.helpers({
+  curUser() {
+    return Meteor.users.findOne({
+      _id: Meteor.userId()
+    });
+  }
+})
