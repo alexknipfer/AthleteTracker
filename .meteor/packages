@@ -20,5 +20,7 @@ kadira:flow-router
 kadira:blaze-layout
 aldeed:collection2
 aldeed:simple-schema
-gildaspk:autoform-materialize
 themeteorchef:bert
+themeteorchef:jquery-validation
+accounts-base
+accounts-password

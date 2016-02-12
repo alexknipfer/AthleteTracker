@@ -5,3 +5,11 @@ Template.navigation.onRendered(() => {
     closeOnClick: true
   });
 });
+
+Template.navigation.events({
+  "click .logoutButton"(e){
+    e.preventDefault();
+    Meteor.logout();
+    FlowRouter.go("/");
+  }
+});

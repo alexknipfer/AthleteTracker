@@ -1,16 +1,27 @@
 <template name="login">
   <div class="row">
     <div class="col s12 m8 l6 offset-l3">
-        <div class="card login-padding">
-          <div class="card-content black-text">
-            <span class="card-title">Login</span> 
-            {{#autoForm schema="LoginSchema" id="loginForm" type="normal"}} 
-            {{>afQuickField name="username"}} 
-            {{>afQuickField name="password" type="password"}}
+      <div class="card login-padding">
+        <div class="card-content black-text">
+          <span class="card-title">Login</span>
+
+          <form id="loginForm">
+            <div class="row">
+              <div class="col s12">
+                <input type="text" name="username" placeholder="Username" required>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col s12">
+                <input type="password" name="password" placeholder="Password" required>
+              </div>
+            </div>
+
             <button class="btn waves-effect login" type="submit">Login</button>
-            {{/autoForm}}
-          </div>
+          </form>
         </div>
+      </div>
     </div>
   </div>
 </template>
