@@ -19,7 +19,7 @@ Template.navigation.events({
       _id: Meteor.userId()
     });
 
-    Bert.alert( "You are now logged out, " + user.firstname + "!", "success", "fixed-top");
+    Bert.alert( "Goodbye, " + user.firstname + "!", "success", "fixed-top");
     FlowRouter.go("/");
     Meteor.logout();
   }
