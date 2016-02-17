@@ -4,16 +4,16 @@ const mainRoutes = FlowRouter.group({
 
 mainRoutes.route('/', {
   action() {
-    BlazeLayout.render('layout', {
-      main: "login"
+    ReactLayout.render(Layout, {
+      content: <Login />
     });
   }
 });
 
 mainRoutes.route('/manageStudents',{
     action(){
-        BlazeLayout.render('layout',{
-            main: "manageStudents"
+        ReactLayout.render(Layout,{
+            content: <ManageStudents />
         });
     }
 });
