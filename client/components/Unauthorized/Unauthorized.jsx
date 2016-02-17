@@ -13,11 +13,9 @@ Unauthorized = React.createClass({
                 you have requested using the credentials you have provided.</p>
                 <hr />
                 <p>Please try the following:</p>
-                <ul>
-                  <li>Login using different credentials</li>
-                  <li>Contact your web administrator if you believe you should
-                  have access to view this page</li>
-                </ul>
+                  <blockquote>Login using different credentials</blockquote>
+                  <blockquote>Contact your web administrator if you believe you should
+                  have access to view this page</blockquote>
               </div>
             </div>
         </div>
