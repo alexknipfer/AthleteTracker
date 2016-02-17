@@ -1,3 +1,9 @@
+@media screen and (min-width: 1000px) {
+    .brand-logo{
+      margin-left: 50px;
+    }
+}
+
 .login-padding{
   margin-top: 30px;
 }
@@ -15,10 +21,6 @@
 
 .image-padding{
   padding: 5px;
-}
-
-.brand-logo{
-  margin-left: 50px;
 }
 
 .unauthorized-title{
