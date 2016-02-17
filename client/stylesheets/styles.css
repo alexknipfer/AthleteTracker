@@ -17,3 +17,18 @@
   padding: 5px;
 }
 
+.brand-logo{
+  margin-left: 50px;
+}
+
+.unauthorized-title{
+  font-size: 30px;
+}
+
+.unauthorized-para{
+  padding-top: 30px;
+}
+
+.unauthorized-card{
+  padding: 30px;
+}

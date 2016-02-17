@@ -151,7 +151,7 @@ ManageStudents = React.createClass({
         );
      }
      else{
-       return (<h1>Not Authorized</h1>);
+       return (<Unauthorized />);
      }
    } 
 });

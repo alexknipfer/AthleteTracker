@@ -18,7 +18,7 @@ Login = React.createClass({
  render(){
    return (
      <div className="row">
-      <div className="col s12 m8 l6 offset-l3">
+      <div className="col s12 m8 l6 offset-l3 offset-m2">
         <div className="card login-padding">
             <div className="card-image image-padding">
                   <img src="images/lu.jpg" width="130" height="170" />
