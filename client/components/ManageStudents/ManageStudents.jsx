@@ -8,7 +8,7 @@ ManageStudents = React.createClass({
                   <h1>Manage Athletes</h1>
                 </div>
                 <div col="s12 m4 l4">
-                  <a className="btn-floating btn-large waves-effect waves-light red right float-button"><i className="material-icons">add</i></a>
+                  <a className="btn-floating btn-large waves-effect waves-light red right float-button" href="/AddStudentCoach"><i className="material-icons">add</i></a>
                 </div>
               </div>
             
