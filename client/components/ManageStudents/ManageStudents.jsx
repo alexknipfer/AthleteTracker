@@ -1,8 +1,32 @@
 ManageStudents = React.createClass({
-   render(){
-     if(Meteor.user()){
-       return (
-            <div>
+  mixins: [ReactMeteorData],
+
+  getMeteorData() {
+    const handle = Meteor.subscribe("students");
+    return {
+      loading: !handle,
+      myStudents: StudentDataCoach.find({
+        createdBy: Meteor.userId()
+      }).fetch()
+    };
+  },
+
+  render() {
+    if (this.data.loading) {
+      return (
+        <Loading />
+      );
+    }
+    
+    else if(Meteor.loggingIn()){
+      return (
+        <Loading />
+      );
+    }
+
+    else if (Meteor.user()) {
+      return (
+        <div>
              <div className="row">
                 <div col="s12 m8 l8">
                   <h1>Manage Athletes</h1>
@@ -11,147 +35,14 @@ ManageStudents = React.createClass({
                   <a className="btn-floating btn-large waves-effect waves-light red right float-button" href="/AddStudentCoach"><i className="material-icons">add</i></a>
                 </div>
               </div>
-            
-              <div className="row">
-                <div className="col s12 m6 l4">
-                  <div className="card">
-                    <div className="card-image waves-effect waves-block waves-light">
-                      <img className="activator" src="images/davemiller.jpg" />
-                    </div>
-                    <div className="card-content">
-                      <span className="card-title activator grey-text text-darken-4">Student Name<i className="material-icons right">reorder</i></span>
-                      <p><a href="#">Email Student</a></p>
-                    </div>
-                    <div className="card-reveal">
-                      <span className="card-title grey-text text-darken-4">Student Name<i className="material-icons right">close</i></span>
-                      <ul>
-                        <li>ACT:</li>
-                        <li>SAT:</li>
-                        <li>GPA:</li>
-                        <li>High School:</li>
-                        <li>Coach:</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-            
-                <div className="col s12 m6 l4">
-                  <div className="card">
-                    <div className="card-image waves-effect waves-block waves-light">
-                      <img className="activator" src="images/davemiller.jpg" />
-                    </div>
-                    <div className="card-content">
-                      <span className="card-title activator grey-text text-darken-4">Student Name<i className="material-icons right">reorder</i></span>
-                      <p><a href="#">Email Student</a></p>
-                    </div>
-                    <div className="card-reveal">
-                      <span className="card-title grey-text text-darken-4">Student Name<i className="material-icons right">close</i></span>
-                      <ul>
-                        <li>ACT:</li>
-                        <li>SAT:</li>
-                        <li>GPA:</li>
-                        <li>High School:</li>
-                        <li>Coach:</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-            
-                <div className="col s12 m6 l4">
-                  <div className="card">
-                    <div className="card-image waves-effect waves-block waves-light">
-                      <img className="activator" src="images/davemiller.jpg" />
-                    </div>
-                    <div className="card-content">
-                      <span className="card-title activator grey-text text-darken-4">Student Name<i className="material-icons right">reorder</i></span>
-                      <p><a href="#">Email Student</a></p>
-                    </div>
-                    <div className="card-reveal">
-                      <span className="card-title grey-text text-darken-4">Student Name<i className="material-icons right">close</i></span>
-                      <ul>
-                        <li>ACT:</li>
-                        <li>SAT:</li>
-                        <li>GPA:</li>
-                        <li>High School:</li>
-                        <li>Coach:</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
-              <div className="row">
-                <div className="col s12 m6 l4">
-                  <div className="card">
-                    <div className="card-image waves-effect waves-block waves-light">
-                      <img className="activator" src="images/davemiller.jpg" />
-                    </div>
-                    <div className="card-content">
-                      <span className="card-title activator grey-text text-darken-4">Student Name<i className="material-icons right">reorder</i></span>
-                      <p><a href="#">Email Student</a></p>
-                    </div>
-                    <div className="card-reveal">
-                      <span className="card-title grey-text text-darken-4">Student Name<i className="material-icons right">close</i></span>
-                      <ul>
-                        <li>ACT:</li>
-                        <li>SAT:</li>
-                        <li>GPA:</li>
-                        <li>High School:</li>
-                        <li>Coach:</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-            
-                <div className="col s12 m6 l4">
-                  <div className="card">
-                    <div className="card-image waves-effect waves-block waves-light">
-                      <img className="activator" src="images/davemiller.jpg" />
-                    </div>
-                    <div className="card-content">
-                      <span className="card-title activator grey-text text-darken-4">Student Name<i className="material-icons right">reorder</i></span>
-                      <p><a href="#">Email Student</a></p>
-                    </div>
-                    <div className="card-reveal">
-                      <span className="card-title grey-text text-darken-4">Student Name<i className="material-icons right">close</i></span>
-                      <ul>
-                        <li>ACT:</li>
-                        <li>SAT:</li>
-                        <li>GPA:</li>
-                        <li>High School:</li>
-                        <li>Coach:</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-            
-                <div className="col s12 m6 l4">
-                  <div className="card">
-                    <div className="card-image waves-effect waves-block waves-light">
-                      <img className="activator" src="images/davemiller.jpg" />
-                    </div>
-                    <div className="card-content">
-                      <span className="card-title activator grey-text text-darken-4">Student Name<i className="material-icons right">reorder</i></span>
-                      <p><a href="#">Email Student</a></p>
-                    </div>
-                    <div className="card-reveal">
-                      <span className="card-title grey-text text-darken-4">Student Name<i className="material-icons right">close</i></span>
-                      <ul>
-                        <li>ACT:</li>
-                        <li>SAT:</li>
-                        <li>GPA:</li>
-                        <li>High School:</li>
-                        <li>Coach:</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
+              <StudentCard studentData={this.data.myStudents} />
+              
             </div>
-        );
-     }
-     else{
-       return (<Unauthorized />);
-     }
-   } 
+      );
+    }
+    else {
+      return (<Unauthorized />);
+    }
+  }
 });
