@@ -35,7 +35,8 @@ const AddStudentData = new ValidatedMethod({
       school: school,
       gpa: gpa,
       act: act,
-      sat: sat
+      sat: sat,
+      createdBy: this.userId
     });
   }
 });
