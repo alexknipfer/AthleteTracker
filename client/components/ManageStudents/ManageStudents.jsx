@@ -30,9 +30,6 @@ ManageStudents = React.createClass({
       return (
         <div>
              <div className="row">
-                <div col="s12 m8 l8">
-                  <h1>Manage Athletes</h1>
-                </div>
                 <div col="s12 m4 l4">
                   <a className="btn-floating btn-large waves-effect waves-light red right float-button z-depth-1" href="/AddStudentCoach"><i className="material-icons">add</i></a>
                 </div>

@@ -5,14 +5,13 @@
 }
 
 body{
-  background-color: #00FFFF;
-  /*background: url(images/p2.png);
-  background-repeat: yes;*/
+  /*background-color: #3DDADB;*/
+  background-image: url("images/p2.png");
+  background-repeat: yes;
 }
 
 .login-padding{
-  margin-top: 30px;
-  /*opacity: 0.8;*/
+  margin-top: 50px;
 }
 
 .headerText{
@@ -29,6 +28,10 @@ body{
 
 .image-padding{
   padding: 5px;
+}
+
+.unauthorized-page{
+  margin-top: 50px;
 }
 
 .unauthorized-title{

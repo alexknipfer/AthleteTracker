@@ -2,7 +2,7 @@ Unauthorized = React.createClass({
   render(){
     return(
       <div className="row">
-        <div className="col s12 m8 l10 offset-l1 offset-m2">
+        <div className="col s12 m8 l10 offset-l1 offset-m2 unauthorized-page">
           <div className="card red lighten-3 unauthorized-card">
               <center>
                 <i className="material-icons large white-text offset">warning</i>
