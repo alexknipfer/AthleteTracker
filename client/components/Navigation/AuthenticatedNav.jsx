@@ -30,7 +30,7 @@ AuthenticatedNav = React.createClass({
       <div className="navbar-fixed">
         <nav className="indigo">
           <div className="nav-wrapper">
-            <a className="brand-logo">LU Tracker</a>
+            <a href="/manageStudents" className="brand-logo bold"><i className="material-icons large left">trending_up</i>LU Tracker</a>
             <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
             <ul className="right hide-on-med-and-down">
               <li><a href="/manageStudents">Manage Students</a></li>
