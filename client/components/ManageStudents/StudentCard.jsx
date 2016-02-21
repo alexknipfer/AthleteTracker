@@ -1,6 +1,6 @@
 StudentCard = React.createClass({
   removeStudent(id, firstname, lastname) {
-
+    let previousWindowKeyDown = window.onkeydown;
       swal({
         title: "Are you sure?",
         text: "You will not be able to recover " + firstname + " " + lastname + "!",
@@ -10,7 +10,7 @@ StudentCard = React.createClass({
         confirmButtonText: "Yes, delete it!",
         closeOnConfirm: false
       }, (isConfirm) => {
-        //window.onkeydown = previousWindowKeyDown;
+        window.onkeydown = previousWindowKeyDown;
         if(isConfirm){
           swal('Deleted!', 'User has been deleted.', 'success');
           Meteor.call("removeStudent", id);
