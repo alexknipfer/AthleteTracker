@@ -1,10 +1,25 @@
 Layout = React.createClass({
+    mixins: [ReactMeteorData],
+  
+  getMeteorData() {
+    return {
+      currentUser: Meteor.user()
+    }
+  },
+  
    render(){
        return (
            <div>
-            <header>
-                <Navigation />
-            </header>
+           {(() => {
+                if(this.data.currentUser){
+                  return(
+                    <header>
+                        <Navigation />
+                    </header>
+                  );
+                }
+            })()}
+            
 
             <main className="container">
                 {this.props.content}
