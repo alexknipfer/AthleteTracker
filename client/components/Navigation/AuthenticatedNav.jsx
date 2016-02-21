@@ -28,7 +28,7 @@ AuthenticatedNav = React.createClass({
   render(){
     return(
       <div className="navbar-fixed">
-        <nav className="cyan darken-1">
+        <nav className="indigo">
           <div className="nav-wrapper">
             <a className="brand-logo">LU Tracker</a>
             <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>

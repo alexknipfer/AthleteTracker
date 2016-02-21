@@ -10,9 +10,9 @@ CommonNav = React.createClass({
     render() {
         return (
             <div className="navbar-fixed">
-                <nav className="cyan darken-1">
+                <nav className="indigo z-depth-1">
                   <div className="nav-wrapper">
-                    <a href="/" className="brand-logo">LU Tracker</a>
+                    <a href="/" className="brand-logo bold"><i className="material-icons large left">trending_up</i>LU Tracker</a>
                     <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
                     
                     <ul classNameName="right hide-on-med-and-down">
