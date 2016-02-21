@@ -4,10 +4,12 @@ ManageStudents = React.createClass({
   getMeteorData() {
     const handle = Meteor.subscribe("students");
     return {
-      loading: !handle,
+      loading: !handle.ready(),
       myStudents: StudentDataCoach.find({
         createdBy: Meteor.userId()
-      }).fetch()
+      }).fetch(),
+      myStudentCount:
+        StudentDataCoach.find().count()
     };
   },
 
@@ -32,12 +34,24 @@ ManageStudents = React.createClass({
                   <h1>Manage Athletes</h1>
                 </div>
                 <div col="s12 m4 l4">
-                  <a className="btn-floating btn-large waves-effect waves-light red right float-button" href="/AddStudentCoach"><i className="material-icons">add</i></a>
+                  <a className="btn-floating btn-large waves-effect waves-light red right float-button z-depth-1" href="/AddStudentCoach"><i className="material-icons">add</i></a>
                 </div>
               </div>
               
-              <StudentCard studentData={this.data.myStudents} />
-              
+              {(() => {
+                if(this.data.myStudentCount == 0){
+                  return(
+                    <NoStudents />
+                  );
+                }
+                
+                else{
+                  return(
+                  <StudentCard studentData={this.data.myStudents} />
+                  );
+                }
+              })()}
+   
             </div>
       );
     }
