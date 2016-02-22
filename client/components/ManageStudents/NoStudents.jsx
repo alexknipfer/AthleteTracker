@@ -7,13 +7,13 @@ NoStudents = React.createClass({
           <div className="card-content black-text">
             <span className="card-title">Welcome to LU Tracker</span>
             <p>Welcome to the Lindenwood University athelete / student tracking
-            system. You can now add atheletes your interested in recruiting and 
+            system. You can now add athletes your interested in recruiting and 
             keep track of all of their data for easy access and management!</p>
             
             <hr />
             
-            <p>You currently have no atheletes added to your tracking system. 
-            To begin adding atheletes click the plus(+) sign in the bottom 
+            <p>You currently have no athletes added to your tracking system. 
+            To begin adding athletes click the plus(+) sign in the bottom 
             right.</p>
             
             <hr />
