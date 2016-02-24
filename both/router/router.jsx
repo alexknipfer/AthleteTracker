@@ -25,3 +25,11 @@ mainRoutes.route('/AddStudentCoach',{
     });
   }
 });
+
+mainRoutes.route('/schools', {
+  action(){
+    ReactLayout.render(Layout,{
+      content: <Schools />
+    });
+  }
+});
