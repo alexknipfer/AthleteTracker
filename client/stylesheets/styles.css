@@ -5,7 +5,6 @@
 }
 
 body{
-  /*background-color: #3DDADB;*/
   background-image: url("images/p2.png");
   background-repeat: yes;
 }
@@ -44,4 +43,13 @@ body{
 
 .unauthorized-card{
   padding: 30px;
+}
+
+.filter-toggle{
+  background-color: white;
+  padding: 15px;
+}
+
+.filter-toggle button{
+  margin-bottom: 10px;
 }
