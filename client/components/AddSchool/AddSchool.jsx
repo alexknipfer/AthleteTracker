@@ -48,7 +48,7 @@ AddSchool = React.createClass({
                     </div>
                   </div>
       
-                  <button className="btn waves-effect login red" type="submit">Add School</button>
+                  <button className="btn waves-effect login grey" type="submit">Add School</button>
                   
                 </form>
               </div>

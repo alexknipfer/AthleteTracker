@@ -39,7 +39,7 @@ Login = React.createClass({
                 </div>
               </div>
   
-              <button className="btn waves-effect login cyan" type="submit">Login</button>
+              <button className="btn waves-effect login grey" type="submit">Login</button>
             </form>
           </div>
         </div>
