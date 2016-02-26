@@ -44,7 +44,10 @@ ManageStudents = React.createClass({
                 
                 else{
                   return(
-                  <StudentCard studentData={this.data.myStudents} />
+                  <div>
+                    <StudentFilter />
+                    <StudentCard studentData={this.data.myStudents} />
+                  </div>
                   );
                 }
               })()}
