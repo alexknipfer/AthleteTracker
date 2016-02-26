@@ -26,6 +26,14 @@ mainRoutes.route('/AddStudentCoach',{
   }
 });
 
+mainRoutes.route('/AddSchool',{
+  action(){
+    ReactLayout.render(Layout,{
+      content: <AddSchool />
+    });
+  }
+});
+
 mainRoutes.route('/schools', {
   action(){
     ReactLayout.render(Layout,{
