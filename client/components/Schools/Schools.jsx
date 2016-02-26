@@ -2,6 +2,11 @@ Schools = React.createClass({
   render(){
     return (
      <div>
+        <div className="row">
+          <div col="s12 m4 l4">
+            <a className="btn-floating btn-large waves-effect waves-light red right float-button z-depth-1" href="/AddSchool"><i className="material-icons">add</i></a>
+          </div>
+        </div>
         <ul class="collection">
           <li class="collection-item avatar">
             <span class="title"><strong> Fen Creek High School</strong></span>
