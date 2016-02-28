@@ -41,3 +41,11 @@ mainRoutes.route('/schools', {
     });
   }
 });
+
+mainRoutes.route('/email', {
+  action(){
+    ReactLayout.render(Layout,{
+      content: <Email />
+    });
+  }
+});
