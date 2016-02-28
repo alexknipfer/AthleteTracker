@@ -9,6 +9,9 @@ Email = React.createClass({
         </div>
         <ul className="collection">
           <li className="collection-item avatar">
+            <span className="title"><h4>Currently viewing all emails for student name</h4></span>
+          </li>
+          <li className="collection-item avatar">
             <span className="title"><strong> 1/1/2016</strong></span>
             <p>Subject: Email Subject Goes Here <br></br>
                Text:   Email body goes here <br></br>
