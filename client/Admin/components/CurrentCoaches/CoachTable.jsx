@@ -23,7 +23,7 @@ CoachTable = React.createClass({
 
   render(){
     return(
-        <table>
+        <table className="highlight responsive-table">
           <thead>
             <tr>
               <th>Username</th>
