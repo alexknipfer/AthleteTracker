@@ -1,16 +1,16 @@
-AuthenticatedNav = React.createClass({
+CoachNav = React.createClass({
   mixins: [ReactMeteorData],
-  
+
   getMeteorData(){
     const handle = Meteor.subscribe("currentUser");
-    
+
     return{
       currentUser: Meteor.users.findOne({
         _id: Meteor.userId()
       })
     };
   },
-  
+
   componentDidMount() {
     $('.button-collapse').sideNav({
       menuWidth: 210,
@@ -18,13 +18,13 @@ AuthenticatedNav = React.createClass({
       closeOnClick: true
     });
   },
-  
+
   logout(){
     Meteor.logout();
     Bert.alert( "Goodbye, " + this.data.currentUser.firstname + "!", "success", "fixed-top");
     FlowRouter.go("/");
   },
-  
+
   render(){
     return(
       <div className="navbar-fixed">

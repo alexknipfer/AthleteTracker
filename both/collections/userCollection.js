@@ -1,33 +1,12 @@
-Meteor.users.schema = new SimpleSchema({
-   username: {
-       type: String,
-   },
-   
-   emails: {
-       type: [Object],
-       optional: false
-   },
-   
-   "emails.$.address": {
-       type: String,
-       regEx: SimpleSchema.RegEx.Email
-   },
-   
-   firstname: {
-       type: String,
-       optional: true
-   },
-   
-   lastname: {
-       type: String,
-       optional: true
-   },
-   
-   services: {
-       type: Object,
-       blackbox: true,
-       optional: true,
-   }
+// Deny all client-side updates on the Lists collection
+Meteor.users.deny({
+   insert() {
+         return true;
+      },
+      update() {
+         return true;
+      },
+      remove() {
+         return true;
+      },
 });
-
-Meteor.users.attachSchema(Meteor.users.schema);

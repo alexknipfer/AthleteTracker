@@ -8,13 +8,23 @@ Login = React.createClass({
       if (error) {
         Bert.alert(error.reason, "danger");
       }
-      else { 
+      else {
         Bert.alert("Welcome!", "success", "fixed-top");
-        FlowRouter.go("/manageStudents");
       }
     });
+
+    Accounts.onLogin(() =>{
+      if(Roles.userIsInRole(Meteor.userId(), "admin")){
+        FlowRouter.go("/currentCoaches");
+      }
+
+      if(Roles.userIsInRole(Meteor.userId(), "coach")){
+        FlowRouter.go("/manageStudents");
+      }
+
+    });
   },
-  
+
  render(){
    return (
      <div className="row">
@@ -25,20 +35,20 @@ Login = React.createClass({
             </div>
           <div className="card-content black-text">
             <span className="card-title">Login</span>
-  
+
             <form onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="col s12">
                   <input type="text" ref="username" className="validate" placeholder="Username" minLength={2} required />
                 </div>
               </div>
-              
+
               <div className="row">
                 <div className="col s12">
                   <input type="password" ref="password" className="validate" placeholder="Password" minLength={2} required />
                 </div>
               </div>
-  
+
               <button className="btn waves-effect login grey" type="submit">Login</button>
             </form>
           </div>
@@ -46,6 +56,6 @@ Login = React.createClass({
       </div>
     </div>
     );
- } 
+ }
 
 });

@@ -28,3 +28,4 @@ force-ssl
 jsx
 react-meteor-data
 react-runtime@=0.14.3
+alanning:roles

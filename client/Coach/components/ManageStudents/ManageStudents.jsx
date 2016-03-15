@@ -8,8 +8,7 @@ ManageStudents = React.createClass({
       myStudents: StudentDataCoach.find({
         createdBy: Meteor.userId()
       }).fetch(),
-      myStudentCount:
-        StudentDataCoach.find().count()
+      myStudentCount: StudentDataCoach.find().count()
     };
   },
 
@@ -19,8 +18,8 @@ ManageStudents = React.createClass({
         <Loading />
       );
     }
-    
-    else if(Meteor.loggingIn()){
+
+    else if (Meteor.loggingIn()) {
       return (
         <Loading />
       );
