@@ -25,7 +25,5 @@ accounts-password
 mdg:validated-method
 kevohagan:sweetalert
 force-ssl
-jsx
-react-meteor-data
-react-runtime@=0.14.3
+react
 alanning:roles
