@@ -36,6 +36,7 @@ const AddSchoolData = new ValidatedMethod({
       schoolCity: schoolCity,
       schoolState: schoolState,
       schoolPhone: schoolPhone,
+      createdBy: this.userId
     });
   }
 });
