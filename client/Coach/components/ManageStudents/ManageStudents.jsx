@@ -25,7 +25,7 @@ ManageStudents = React.createClass({
       );
     }
 
-    else if (Meteor.user()) {
+    else if (Roles.userIsInRole(Meteor.userId(), "coach")) {
       return (
         <div>
              <div className="row">
@@ -33,14 +33,14 @@ ManageStudents = React.createClass({
                   <a className="btn-floating btn-large waves-effect waves-light red right float-button z-depth-1" href="/AddStudentCoach"><i className="material-icons">add</i></a>
                 </div>
               </div>
-              
+
               {(() => {
                 if(this.data.myStudentCount == 0){
                   return(
                     <NoStudents />
                   );
                 }
-                
+
                 else{
                   return(
                   <div>
@@ -50,7 +50,7 @@ ManageStudents = React.createClass({
                   );
                 }
               })()}
-   
+
             </div>
       );
     }

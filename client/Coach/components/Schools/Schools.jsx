@@ -18,7 +18,7 @@ Schools = React.createClass({
       );
     }
 
-    else{
+    else if(Roles.userIsInRole(Meteor.userId(), "coach")){
       return (
        <div>
           <div className="row">
@@ -31,7 +31,11 @@ Schools = React.createClass({
           </ul>
        </div>
       );
-  }
     }
+
+    else{
+      return(<Unauthorized />);
+    }
+  }
 
 });
