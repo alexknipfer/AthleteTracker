@@ -22,7 +22,7 @@ body{
   z-index: 9999;
   bottom: 20px;
   right: 20px;
-  
+
 }
 
 .image-padding{
@@ -52,4 +52,8 @@ body{
 
 .filter-toggle button{
   margin-bottom: 10px;
+}
+
+.no-student-card a{
+  color: grey;
 }
