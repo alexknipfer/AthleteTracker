@@ -18,7 +18,7 @@ AddSchool = React.createClass({
 
       else{
         FlowRouter.go("/schools");
-        Bert.alert( 'Student added successfully!', 'success', 'growl-top-right' );
+        Bert.alert( 'School added successfully!', 'success', 'growl-top-right' );
       }
     });
   },
