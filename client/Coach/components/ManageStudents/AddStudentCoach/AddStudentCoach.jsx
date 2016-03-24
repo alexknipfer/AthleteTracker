@@ -30,7 +30,7 @@ AddStudentCoach = React.createClass({
         <div className="col s12 m12 l12">
           <div className="card">
             <div className="card-content black-text">
-              <span className="card-title">Add Athlete</span>
+              <span className="card-title">Add Recruit</span>
 
               <form onSubmit={this.handleSubmit}>
                 <div className="row">
