@@ -34,12 +34,12 @@ CoachNav = React.createClass({
             <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
             <ul className="right hide-on-med-and-down">
               <li><a href="/schools">Schools</a></li>
-              <li><a href="/manageStudents">Manage Students</a></li>
+              <li><a href="/manageStudents">Manage Recruits</a></li>
               <li><a onClick={this.logout}>Logout</a></li>
             </ul>
             <ul className="side-nav" id="mobile-demo">
               <li><a href="/schools">Schools</a></li>
-              <li><a href="/manageStudents">Manage Students</a></li>
+              <li><a href="/manageStudents">Manage Recruits</a></li>
               <li><a onClick={this.logout}>Logout</a></li>
             </ul>
           </div>
