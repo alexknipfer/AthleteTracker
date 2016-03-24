@@ -40,15 +40,24 @@ StudentCard = React.createClass({
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">Student Name<i className="material-icons right">close</i></span>
                 <ul>
-                  <li>ACT: {student.act}</li>
-                  <li>SAT: {student.sat}</li>
+                  <li>Graduation Year: {student.gradYear}</li>
                   <li>GPA: {student.gpa}</li>
-                  <li>High School: {student.school}</li>
-                  <li>Coach:</li>
+                  <li>ACT: {student.act}</li>
+                  <li>Date of Birth: {student.dob}</li>
+                  <li>Phone Number: {student.phoneNumber}</li>
+                  <li>Email: {student.email}</li>
+                  <li>City: {student.city}</li>
+                  <li>State: {student.state}</li>
+                  <li>Height: {student.height}</li>
+                  <li>Weight: {student.weight}</li>
+                  <li>50 Fr: {student.speedHalf}</li>
+                  <li>100 Fr: {student.speedFull}</li>
+                  <li>Dominate Hand: {student.handOrientation}</li>
+                  <li>Position: {student.position}</li>
                 </ul>
-                
+
               </div>
-              
+
             </div>
           </div>
           );
