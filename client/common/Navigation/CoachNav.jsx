@@ -17,6 +17,8 @@ CoachNav = React.createClass({
       edge: 'left',
       closeOnClick: true
     });
+
+    $(".dropdown-button").dropdown();
   },
 
   logout(){
@@ -28,6 +30,11 @@ CoachNav = React.createClass({
   render(){
     return(
       <div className="navbar-fixed">
+        <ul id="dropdown1" className="dropdown-content">
+          <li><a href="/profile">Profile<i className="material-icons left">account_box</i></a></li>
+          <li className="divider"></li>
+          <li><a onClick={this.logout}>Logout<i className="material-icons left">exit_to_app</i></a></li>
+        </ul>
         <nav className="indigo">
           <div className="nav-wrapper">
             <a href="/manageStudents" className="brand-logo bold"><i className="material-icons large left">trending_up</i>LU Tracker</a>
@@ -35,7 +42,7 @@ CoachNav = React.createClass({
             <ul className="right hide-on-med-and-down">
               <li><a href="/schools">Schools</a></li>
               <li><a href="/manageStudents">Manage Recruits</a></li>
-              <li><a onClick={this.logout}>Logout</a></li>
+              <li><a className="dropdown-button" href="#!" data-activates="dropdown1">{this.data.currentUser.username}<i className="material-icons right">arrow_drop_down</i></a></li>
             </ul>
             <ul className="side-nav" id="mobile-demo">
               <li><a href="/schools">Schools</a></li>
