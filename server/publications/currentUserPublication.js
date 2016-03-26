@@ -3,7 +3,11 @@ Meteor.publish("currentUser", function() {
         _id: this.userId
     }, {
         fields: {
-            firstname: 1
+            username: 1,
+            firstname: 1,
+            lastname: 1,
+            "emails.address": 1,
+            roles: 1
         }
     });
 });
