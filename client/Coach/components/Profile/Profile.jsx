@@ -40,7 +40,7 @@ Profile = React.createClass({
                 <tbody>
                   <tr>
                     <td><b>Username: </b></td>
-                    <td>{this.data.currentUser.username}</td>
+                    <td><input disabled defaultValue={this.data.currentUser.username} /></td>
                   </tr>
                   <tr>
                     <td><b>Firstname:</b></td>
