@@ -11,6 +11,11 @@ Profile = React.createClass({
     };
   },
 
+  updateProfile(){
+    const firstname = this.refs.firstname.value;
+    Meteor.call("updateProfile", {firstname});
+  },
+
   render() {
     if (this.data.loading) {
       return (
@@ -39,7 +44,7 @@ Profile = React.createClass({
                   </tr>
                   <tr>
                     <td><b>Firstname:</b></td>
-                    <td>{this.data.currentUser.firstname}</td>
+                    <td><input ref="firstname" onChange={this.updateProfile} defaultValue={this.data.currentUser.firstname} /></td>
                   </tr>
                   <tr>
                     <td><b>Lastname:</b></td>
