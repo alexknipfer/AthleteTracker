@@ -41,3 +41,11 @@ coachRoutes.route('/email', {
     });
   }
 });
+
+coachRoutes.route('/profile', {
+  action(){
+    ReactLayout.render(Layout,{
+      content: <Profile />
+    });
+  }
+});
