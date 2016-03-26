@@ -47,6 +47,7 @@ CoachNav = React.createClass({
             <ul className="side-nav" id="mobile-demo">
               <li><a href="/schools">Schools</a></li>
               <li><a href="/manageStudents">Manage Recruits</a></li>
+              <li><a href="/profile">Profile</a></li>
               <li><a onClick={this.logout}>Logout</a></li>
             </ul>
           </div>
