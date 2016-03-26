@@ -9,3 +9,11 @@ commonRoutes.route('/', {
     });
   }
 });
+
+commonRoutes.route('/changePassword', {
+  action(){
+    ReactLayout.render(Layout, {
+      content: <ChangePassword />
+    });
+  }
+});
