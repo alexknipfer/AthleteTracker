@@ -49,3 +49,19 @@ coachRoutes.route('/profile', {
     });
   }
 });
+
+coachRoutes.route('/currentAdmissions', {
+  action(){
+    ReactLayout.render(Layout,{
+      content: <CurrentAdmissions />
+    });
+  }
+});
+
+coachRoutes.route('/addAdmissions', {
+  action(){
+    ReactLayout.render(Layout,{
+      content: <AddAdmissions />
+    });
+  }
+});
