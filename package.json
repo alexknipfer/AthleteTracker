@@ -1,0 +1,23 @@
+{
+  "name": "lutracker",
+  "version": "1.0.0",
+  "description": "Lindenwood University Athlete Tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexknipfer/LUTracker.git"
+  },
+  "keywords": [
+    "lutracker",
+    "lindenwood"
+  ],
+  "author": "Alex Knipfer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexknipfer/LUTracker/issues"
+  },
+  "homepage": "https://github.com/alexknipfer/LUTracker#readme"
+}

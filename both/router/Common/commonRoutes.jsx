@@ -17,3 +17,11 @@ commonRoutes.route('/changePassword', {
     });
   }
 });
+
+commonRoutes.route('/forgotPassword', {
+  action(){
+    ReactLayout.render(Layout, {
+      content: <ForgotPassword/>
+    });
+  }
+});

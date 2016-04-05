@@ -48,7 +48,9 @@ Login = React.createClass({
                   <input type="password" ref="password" className="validate" placeholder="Password" minLength={2} required />
                 </div>
               </div>
-
+              <div className="row right">
+                <a href="/forgotPassword">Forgot Password</a>
+              </div>
               <button className="btn waves-effect login grey" type="submit">Login</button>
             </form>
           </div>
