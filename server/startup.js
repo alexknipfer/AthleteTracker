@@ -3,7 +3,7 @@ Meteor.startup(function() {
     let userAdmin = Accounts.createUser({
       username: "admin",
       password: "admin",
-      email: "alexanderknipfer@gmail.com"
+      email: "alex@gmail.com"
     });
 
     Meteor.users.update(userAdmin, {
@@ -14,5 +14,6 @@ Meteor.startup(function() {
     });
 
     Roles.addUsersToRoles(userAdmin, "admin");
+
   }
 });
