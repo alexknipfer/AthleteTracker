@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 AdminNav = React.createClass({
   mixins: [ReactMeteorData],
@@ -23,7 +24,11 @@ AdminNav = React.createClass({
 
   logout(){
     Meteor.logout();
-    Bert.alert( "Goodbye, " + this.data.currentUser.firstname + "!", "success", "fixed-top");
+    Alert.error('Goodbye, ' + this.data.currentUser.firstname + "!", {
+        position: 'top-right',
+        effect: 'stackslide',
+        timeout: 3000
+    });
     FlowRouter.go("/");
   },
 

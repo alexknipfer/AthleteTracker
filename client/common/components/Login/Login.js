@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 Login = React.createClass({
   handleSubmit(e){
@@ -11,7 +12,11 @@ Login = React.createClass({
         Bert.alert(error.reason, "danger");
       }
       else {
-        Bert.alert("Welcome!", "success", "fixed-top");
+        Alert.success('Welcome!', {
+            position: 'top-right',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
     });
 
