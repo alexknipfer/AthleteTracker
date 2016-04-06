@@ -28,3 +28,4 @@ force-ssl
 alanning:roles
 session
 react-meteor-data
+static-html
