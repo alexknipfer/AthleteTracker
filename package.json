@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/alexknipfer/LUTracker/issues"
   },
-  "homepage": "https://github.com/alexknipfer/LUTracker#readme"
+  "homepage": "https://github.com/alexknipfer/LUTracker#readme",
+  "dependencies": {
+    "react": "^0.14.8",
+    "react-addons-pure-render-mixin": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-mounter": "^1.1.0"
+  }
 }
