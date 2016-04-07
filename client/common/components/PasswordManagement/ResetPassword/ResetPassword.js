@@ -42,10 +42,10 @@ export default class ResetPassword extends React.Component{
               <form onSubmit={this.handleSubmit.bind(this)}>
                 <div className="row">
                   <div className="col s12">
-                    <input type="text" ref="newPassword" className="validate" placeholder="Enter New Password" minLength={2} required />
+                    <input type="password" ref="newPassword" className="validate" placeholder="Enter New Password" minLength={2} required />
                   </div>
                   <div className="col s12">
-                    <input type="text" ref="confirmNewPassword" className="validate" placeholder="Confirm New Password" minLength={2} required />
+                    <input type="password" ref="confirmNewPassword" className="validate" placeholder="Confirm New Password" minLength={2} required />
                   </div>
                 </div>
                 <button className="btn waves-effect login grey" type="submit">Reset Password</button>
