@@ -15,7 +15,7 @@ export default class CoachNav extends React.Component{
   logout(){
     Meteor.logout();
     Alert.error('Goodbye, ' + this.props.userName + "!", {
-        position: 'top-right',
+        position: 'bottom-left',
         effect: 'stackslide',
         timeout: 3000
     });
