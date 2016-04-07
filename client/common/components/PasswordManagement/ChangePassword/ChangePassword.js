@@ -1,6 +1,6 @@
 import React from 'react';
 
-ChangePassword = React.createClass({
+export default class ChangePassword extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const oldPassword = this.refs.oldPassword.value;
@@ -16,7 +16,7 @@ ChangePassword = React.createClass({
         FlowRouter.go("/profile");
       }
     });
-  },
+  }
 
  render(){
    return (
@@ -26,7 +26,7 @@ ChangePassword = React.createClass({
           <div className="card-content black-text">
             <span className="card-title">Change Password</span>
 
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit.bind(this)}>
               <div className="row">
                 <div className="col s12">
                   <input type="password" ref="oldPassword" className="validate" placeholder="Old Password" minLength={2} required />
@@ -48,4 +48,4 @@ ChangePassword = React.createClass({
     );
  }
 
-});
+}

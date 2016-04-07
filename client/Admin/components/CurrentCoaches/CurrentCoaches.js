@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Loading from '../../../common/components/Loading/Loading.js';
+import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.js';
+
 CurrentCoaches = React.createClass({
   mixins: [ReactMeteorData],
 

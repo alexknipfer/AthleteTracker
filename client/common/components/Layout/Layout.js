@@ -1,5 +1,6 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import CommonNav from '../Navigation/CommonNav.js';
 
 Layout = React.createClass({
    render(){

@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from '../../../common/components/Loading/Loading.js';
 
 CurrentAdmissions = React.createClass({
   mixins: [ReactMeteorData],

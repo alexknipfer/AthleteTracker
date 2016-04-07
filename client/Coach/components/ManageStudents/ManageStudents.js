@@ -1,4 +1,6 @@
 import React from 'react';
+import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.js';
+import Loading from '../../../common/components/Loading/Loading.js';
 
 ManageStudents = React.createClass({
   mixins: [ReactMeteorData],

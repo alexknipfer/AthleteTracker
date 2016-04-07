@@ -1,6 +1,6 @@
 import React from 'react';
 
-Unauthorized = React.createClass({
+export default class Unauthorized extends React.Component{
   render(){
     return(
       <div className="row">
@@ -24,4 +24,4 @@ Unauthorized = React.createClass({
       </div>
       );
   }
-});
+}

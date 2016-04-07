@@ -1,6 +1,6 @@
 import React from 'react';
 
-Loading = React.createClass({
+export default class Loading extends React.Component{
   render() {
     const styles = {
       spinnerStyle: {
@@ -27,4 +27,4 @@ Loading = React.createClass({
       </div>
     );
   }
-});
+}

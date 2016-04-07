@@ -1,6 +1,6 @@
 import React from 'react';
 
-ForgotPassword = React.createClass({
+export default class ForgotPassword extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const email= this.refs.email.value;
@@ -17,7 +17,7 @@ ForgotPassword = React.createClass({
         FlowRouter.go("/");
       }
     });
-  },
+  }
 
  render(){
    return (
@@ -27,7 +27,7 @@ ForgotPassword = React.createClass({
           <div className="card-content black-text">
             <span className="card-title">Reset Password</span>
 
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit.bind(this)}>
               <div className="row">
                 <div className="col s12">
                   <input type="text" ref="email" className="validate" placeholder="Email" minLength={2} required />
@@ -41,5 +41,4 @@ ForgotPassword = React.createClass({
     </div>
     );
  }
-
-});
+}

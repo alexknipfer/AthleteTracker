@@ -1,13 +1,14 @@
 import React from 'react';
 
-CommonNav = React.createClass({
+export default class CommonNav extends React.Component{
+
     componentDidMount() {
         $('.button-collapse').sideNav({
             menuWidth: 210,
             edge: 'left',
             closeOnClick: true
           });
-    },
+    }
 
     render() {
         return (
@@ -20,4 +21,4 @@ CommonNav = React.createClass({
               </div>
         );
     }
-});
+}

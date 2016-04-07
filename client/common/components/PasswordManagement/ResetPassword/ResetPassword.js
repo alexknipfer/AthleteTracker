@@ -1,6 +1,6 @@
 import React from 'react';
 
-ResetPassword = React.createClass({
+export default class ResetPassword extends React.Component{
   handleSubmit(e){
     e.preventDefault();
 
@@ -29,7 +29,7 @@ ResetPassword = React.createClass({
     else{
       Bert.alert("Please make sure the two passwords are the same.", "danger", "fixed-top");
     }
-  },
+  }
 
  render(){
      return (
@@ -39,7 +39,7 @@ ResetPassword = React.createClass({
             <div className="card-content black-text">
               <span className="card-title">Reset Password</span>
 
-              <form onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handleSubmit.bind(this)}>
                 <div className="row">
                   <div className="col s12">
                     <input type="text" ref="newPassword" className="validate" placeholder="Enter New Password" minLength={2} required />
@@ -56,5 +56,4 @@ ResetPassword = React.createClass({
       </div>
       );
  }
-
-});
+}

@@ -45,7 +45,9 @@ CoachNav = React.createClass({
         <nav className="indigo">
           <div className="nav-wrapper">
             <a href="/manageStudents" className="brand-logo bold"><i className="material-icons large left">trending_up</i>LU Tracker</a>
-            <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+            <a href="#" data-activates="mobile-demo" className="button-collapse">
+              <i className="material-icons">menu</i>
+            </a>
             <ul className="right hide-on-med-and-down">
               <li><a href="/schools">Schools</a></li>
               <li><a href="/currentAdmissions">Manage Admissions</a></li>

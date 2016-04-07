@@ -1,4 +1,7 @@
 import React from 'react';
+import CommonNav from '../Navigation/CommonNav.js';
+import CaochNav from '../Navigation/CoachNav.js';
+import AdminNav from '../../containers/AdminNavContainer.js';
 
 Navigation = React.createClass({
   mixins: [ReactMeteorData],
@@ -31,6 +34,5 @@ Navigation = React.createClass({
         <CommonNav />
       );
     }
-
   }
 });

@@ -14,6 +14,5 @@ Meteor.startup(function() {
     });
 
     Roles.addUsersToRoles(userAdmin, "admin");
-
   }
 });

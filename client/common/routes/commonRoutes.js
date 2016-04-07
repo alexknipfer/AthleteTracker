@@ -1,5 +1,9 @@
 import React from 'react';
 import { mount } from 'react-mounter';
+import Login from '../components/Login/Login.js';
+import ChangePassword from '../components/PasswordManagement/ChangePassword/ChangePassword.js';
+import ForgotPassword from '../components/PasswordManagement/ForgotPassword/ForgotPassword.js';
+import ResetPassword from '../components/PasswordManagement/ResetPassword/ResetPassword.js';
 
 const commonRoutes = FlowRouter.group({
   name: 'commonRoutes',

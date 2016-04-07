@@ -1,18 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
 
-AdminNav = React.createClass({
-  mixins: [ReactMeteorData],
-
-  getMeteorData(){
-    const handle = Meteor.subscribe("currentUser");
-
-    return{
-      currentUser: Meteor.users.findOne({
-        _id: Meteor.userId()
-      })
-    };
-  },
+export default class AdminNav extends React.Component{
 
   componentDidMount() {
     $('.button-collapse').sideNav({
@@ -20,17 +9,17 @@ AdminNav = React.createClass({
       edge: 'left',
       closeOnClick: true
     });
-  },
+  }
 
   logout(){
     Meteor.logout();
-    Alert.error('Goodbye, ' + this.data.currentUser.firstname + "!", {
+    Alert.error('Goodbye, ' + this.props.currentUser.firstname + "!", {
         position: 'top-right',
         effect: 'stackslide',
         timeout: 3000
     });
     FlowRouter.go("/");
-  },
+  }
 
   render(){
     return(
@@ -41,15 +30,15 @@ AdminNav = React.createClass({
             <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
             <ul className="right hide-on-med-and-down">
               <li><a href="/currentCoaches">Manage Coaches</a></li>
-              <li><a onClick={this.logout}>Logout</a></li>
+              <li><a onClick={this.logout.bind(this)}>Logout</a></li>
             </ul>
             <ul className="side-nav" id="mobile-demo">
               <li><a href="/currentCoaches">Manage Coaches</a></li>
-              <li><a onClick={this.logout}>Logout</a></li>
+              <li><a onClick={this.logout.bind(this)}>Logout</a></li>
             </ul>
           </div>
         </nav>
       </div>
       );
   }
-});
+}

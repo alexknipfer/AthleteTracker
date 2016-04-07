@@ -1,7 +1,8 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import CommonNav from '../Navigation/CommonNav.js';
 
-Login = React.createClass({
+export default class Login extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const username = this.refs.username.value;
@@ -30,7 +31,7 @@ Login = React.createClass({
       }
 
     });
-  },
+  }
 
  render(){
    return (
@@ -43,7 +44,7 @@ Login = React.createClass({
           <div className="card-content black-text">
             <span className="card-title">Login</span>
 
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit.bind(this)}>
               <div className="row">
                 <div className="col s12">
                   <input type="text" ref="username" className="validate" placeholder="Username" minLength={2} required />
@@ -66,5 +67,4 @@ Login = React.createClass({
     </div>
     );
  }
-
-});
+}
