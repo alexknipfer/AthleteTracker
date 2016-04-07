@@ -1,5 +1,5 @@
 import { createContainer } from 'meteor/react-meteor-data';
-import AdminNav from '../components/Navigation/AdminNav.js';
+import Navigation from '../components/Navigation/Navigation.js';
 
 export default createContainer(() => {
   const handle = Meteor.subscribe("currentUser");
@@ -12,4 +12,4 @@ export default createContainer(() => {
   return {
     currentUser
   };
-}, AdminNav);
+}, Navigation);

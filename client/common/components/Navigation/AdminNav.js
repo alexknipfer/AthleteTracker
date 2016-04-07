@@ -13,7 +13,7 @@ export default class AdminNav extends React.Component{
 
   logout(){
     Meteor.logout();
-    Alert.error('Goodbye, ' + this.props.currentUser.firstname + "!", {
+    Alert.error('Goodbye, ' + this.props.userName + "!", {
         position: 'top-right',
         effect: 'stackslide',
         timeout: 3000

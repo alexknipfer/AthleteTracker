@@ -1,31 +1,20 @@
 import React from 'react';
-import CommonNav from '../Navigation/CommonNav.js';
-import CaochNav from '../Navigation/CoachNav.js';
-import AdminNav from '../../containers/AdminNavContainer.js';
+import CommonNav from './CommonNav.js';
+import CoachNav from './CoachNav.js';
+import AdminNav from './AdminNav.js';
 
-Navigation = React.createClass({
-  mixins: [ReactMeteorData],
-
-  getMeteorData(){
-    const handle = Meteor.subscribe("currentUser");
-
-    return{
-      currentUser: Meteor.users.findOne({
-        _id: Meteor.userId()
-      })
-    };
-  },
+export default class Navigation extends React.Component{
 
   render() {
-    if (Roles.userIsInRole(this.data.currentUser, "admin")) {
+    if (Roles.userIsInRole(this.props.currentUser, "admin")) {
       return (
-        <AdminNav />
+        <AdminNav userName={this.props.currentUser.firstname}/>
       );
     }
 
-    if (Roles.userIsInRole(this.data.currentUser, "coach")) {
+    if (Roles.userIsInRole(this.props.currentUser, "coach")) {
       return (
-        <CoachNav />
+        <CoachNav userName={this.props.currentUser.firstname}/>
       );
     }
 
@@ -35,4 +24,4 @@ Navigation = React.createClass({
       );
     }
   }
-});
+}

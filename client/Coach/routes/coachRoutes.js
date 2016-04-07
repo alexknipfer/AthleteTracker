@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'react-mounter';
+import Layout from '../../common/components/Layout/Layout.js';
 
 const coachRoutes = FlowRouter.group({
   name: 'coachRoutes',

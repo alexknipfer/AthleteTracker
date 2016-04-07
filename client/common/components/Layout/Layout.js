@@ -1,22 +1,21 @@
 import React from 'react';
 import Alert from 'react-s-alert';
-import CommonNav from '../Navigation/CommonNav.js';
+import Navigation from '../../containers/navigationContainer.js';
 
-Layout = React.createClass({
-   render(){
-       return (
-           <div>
+ const Layout = ({content}) => (
+   <div>
 
-            <header>
-                <Navigation />
-            </header>
+    <header>
+        <Navigation />
+    </header>
 
+    <main className="container">
+        {content}
+    </main>
 
-            <main className="container">
-                {this.props.content}
-            </main>
-            <Alert stack={{limit: 3}} />
-           </div>
-        );
-   }
-});
+      <Alert stack={{limit: 3}} />
+
+   </div>
+ );
+
+ export default Layout;

@@ -4,6 +4,7 @@ import Login from '../components/Login/Login.js';
 import ChangePassword from '../components/PasswordManagement/ChangePassword/ChangePassword.js';
 import ForgotPassword from '../components/PasswordManagement/ForgotPassword/ForgotPassword.js';
 import ResetPassword from '../components/PasswordManagement/ResetPassword/ResetPassword.js';
+import Layout from '../components/Layout/Layout.js';
 
 const commonRoutes = FlowRouter.group({
   name: 'commonRoutes',
