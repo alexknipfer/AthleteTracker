@@ -20,7 +20,7 @@ LU Tracker is a web based application (Desktop and Mobile) that allows school co
 
 ## Version
 
-0.0.1
+0.5
 
 ## Authors
 
