@@ -19,7 +19,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 materialize:materialize
 kadira:flow-router
 aldeed:simple-schema
-themeteorchef:bert
 accounts-base
 accounts-password
 mdg:validated-method
