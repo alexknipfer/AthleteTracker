@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.js';
 
 export default class AddStudentCoach extends React.Component{
@@ -24,12 +25,20 @@ export default class AddStudentCoach extends React.Component{
 
     Meteor.call("AddStudentData", {firstname, lastname, gradYear, gpa, act, dob, phoneNumber, email, city, state, height, weight, speedHalf, speedFull, handOrientation, position}, (error) => {
       if(error){
-        Bert.alert(error.reason, "danger");
+        Alert.error(error.reason, {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
 
       else{
         FlowRouter.go("/manageStudents");
-        Bert.alert( 'Student added successfully!', 'success', 'growl-top-right' );
+        Alert.success("Student Added Successfully!", {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
     });
 

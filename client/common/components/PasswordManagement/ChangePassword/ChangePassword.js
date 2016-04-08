@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 export default class ChangePassword extends React.Component{
   handleSubmit(e){
@@ -8,11 +9,19 @@ export default class ChangePassword extends React.Component{
 
     Accounts.changePassword(oldPassword, newPassword, (error, reason) => {
       if(error){
-        Bert.alert(error.reason, "danger");
+        Alert.error(error.reason, {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
 
       else{
-        Bert.alert("Successfully changed password!", "success", "fixed-top");
+        Alert.success("Successfully Changed Password!", {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
         FlowRouter.go("/profile");
       }
     });

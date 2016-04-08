@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.js';
 
 export default class AddAdmissions extends React.Component{
@@ -13,12 +14,20 @@ export default class AddAdmissions extends React.Component{
 
     Meteor.call("AddAdmissions", {admissionsUserName, admissionsFirstName, admissionsLastName, admissionsEmail, admissionsPassword}, (error) => {
       if(error){
-        Bert.alert(error.reason, "danger");
+        Alert.error(error.reason, {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
 
       else{
         FlowRouter.go("/currentAdmissions");
-        Bert.alert( 'Admissions agent added successfully!', 'success', 'growl-top-right' );
+        Alert.success("Admissions Agent Added Successfully!", {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
     });
   }

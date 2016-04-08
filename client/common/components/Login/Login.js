@@ -10,11 +10,15 @@ export default class Login extends React.Component{
 
     Meteor.loginWithPassword(username, password, (error, reason) => {
       if (error) {
-        Bert.alert(error.reason, "danger");
+        Alert.error(error.reason, {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
       else {
-        Alert.success('Welcome!', {
-            position: 'bottom-right',
+        Alert.success('Welcome to LU Tracker!', {
+            position: 'bottom',
             effect: 'stackslide',
             timeout: 3000
         });

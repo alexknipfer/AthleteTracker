@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 export default class ResetPassword extends React.Component{
   handleSubmit(e){
@@ -10,11 +11,19 @@ export default class ResetPassword extends React.Component{
     if(newPassword == confirmNewPassword){
       Accounts.resetPassword(Session.get("reset-password"), newPassword, (error, reason) => {
         if(error){
-          Bert.alert(error.reason, "danger");
+          Alert.error(error.reason, {
+              position: 'bottom',
+              effect: 'stackslide',
+              timeout: 3000
+          });
         }
 
         else{
-          Bert.alert("Password has been changed successfully, welcome back!", "success", "fixed-top");
+          Alert.success("Password changed successfully, welcome back!", {
+              position: 'bottom',
+              effect: 'stackslide',
+              timeout: 3000
+          });
           if(Roles.userIsInRole(Meteor.userId(), "admin")){
             FlowRouter.go("/currentCoaches")
           }
@@ -27,7 +36,11 @@ export default class ResetPassword extends React.Component{
     }
 
     else{
-      Bert.alert("Please make sure the two passwords are the same.", "danger", "fixed-top");
+      Alert.error("Please make sure the two passwords are the same!", {
+          position: 'bottom',
+          effect: 'stackslide',
+          timeout: 3000
+      });
     }
   }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.js';
 
 export default class AddSchool extends React.Component{
@@ -15,12 +16,20 @@ export default class AddSchool extends React.Component{
 
     Meteor.call("AddSchoolData", {schoolName, schoolCoach, schoolAddress,schoolZip, schoolCity, schoolState, schoolPhone}, (error) => {
       if(error){
-        Bert.alert(error.reason, "danger");
+        Alert.error(error.reason, {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
 
       else{
         FlowRouter.go("/schools");
-        Bert.alert( 'School added successfully!', 'success', 'growl-top-right' );
+        Alert.success("School Added Successfully!", {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
     });
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 
 export default class ForgotPassword extends React.Component{
   handleSubmit(e){
@@ -9,11 +10,19 @@ export default class ForgotPassword extends React.Component{
 
     Accounts.forgotPassword(options, (error, reason) => {
       if(error){
-        Bert.alert(error.reason, "danger");
+        Alert.error(error.reason, {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
 
       else{
-        Bert.alert("Password has been sent to your email!", "success", "fixed-top");
+        Alert.success("Password has been sent to your email!", {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
         FlowRouter.go("/");
       }
     });
