@@ -1,6 +1,14 @@
 import React from 'react';
 import { mount } from 'react-mounter';
 import Layout from '../../common/components/Layout/Layout.js';
+import Email from '../components/Email/Email.js';
+import AddAdmissions from '../components/ManageAdmissions/AddAdmissions.js';
+import CurrentAdmissions from '../containers/currentAdmissions.js';
+import AddStudentCoach from '../components/ManageStudents/AddStudentCoach.js';
+import ManageStudents from '../containers/manageStudents.js';
+import Profile from '../containers/profile.js';
+import Schools from '../containers/schools.js';
+import AddSchool from '../components/Schools/AddSchool.js';
 
 const coachRoutes = FlowRouter.group({
   name: 'coachRoutes',

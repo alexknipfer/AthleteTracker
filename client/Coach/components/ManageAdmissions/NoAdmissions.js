@@ -1,6 +1,7 @@
 import React from 'react';
+import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.js';
 
-NoAdmissions = React.createClass({
+export default class NoAdmissions extends React.Component{
   render(){
     if(Roles.userIsInRole(Meteor.userId(), "coach"))
     {
@@ -25,4 +26,4 @@ NoAdmissions = React.createClass({
     }
 
   }
-});
+}

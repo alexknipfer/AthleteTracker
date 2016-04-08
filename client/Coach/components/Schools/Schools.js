@@ -1,22 +1,13 @@
 import React from 'react';
 import Loading from '../../../common/components/Loading/Loading.js';
+import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.js';
+import SchoolCard from '../Schools/SchoolCard.js';
 
 
-Schools = React.createClass({
-  mixins: [ReactMeteorData],
-
-  getMeteorData() {
-    const handle = Meteor.subscribe("schools");
-    return {
-      loading: !handle.ready(),
-      mySchools: SchoolData.find({
-        createdBy: Meteor.userId()
-      }).fetch()
-    };
-  },
+export default class Schools extends React.Component{
 
   render(){
-   if (this.data.loading) {
+   if (this.props.loading) {
       return (
         <Loading />
       );
@@ -31,7 +22,7 @@ Schools = React.createClass({
             </div>
           </div>
           <ul className="collection">
-            <SchoolCard schoolData={this.data.mySchools} />
+            <SchoolCard schoolData={this.props.mySchools} />
           </ul>
        </div>
       );
@@ -42,4 +33,4 @@ Schools = React.createClass({
     }
   }
 
-});
+}

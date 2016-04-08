@@ -2,25 +2,12 @@ import React from 'react';
 
 import Loading from '../../../common/components/Loading/Loading.js';
 import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.js';
+import NoCoaches from '../CurrentCoaches/NoCoaches.js';
+import CoachTable from '../CurrentCoaches/CoachTable.js';
 
-CurrentCoaches = React.createClass({
-  mixins: [ReactMeteorData],
-
-  getMeteorData() {
-    const handle = Meteor.subscribe("coaches");
-    return {
-      loading: !handle.ready(),
-      myCoaches: Meteor.users.find({
-        roles: "coach"
-      }).fetch(),
-      myCoachCount: Meteor.users.find({
-        roles: "coach"
-      }).count()
-    };
-  },
-
+export default class CurrentCoaches extends React.Component{
   render(){
-    if (this.data.loading) {
+    if (this.props.loading) {
       return (
         <Loading />
       );
@@ -38,12 +25,16 @@ CurrentCoaches = React.createClass({
         <div>
           <div className="row">
             <div col="s12 m4 l4">
-            <a className="btn-floating btn-large waves-effect waves-light red right float-button z-depth-1" href="/AddCoach"><i className="material-icons">add</i></a>
+              <a
+                className="btn-floating btn-large waves-effect waves-light red right float-button z-depth-1"
+                href="/AddCoach">
+                <i className="material-icons">add</i>
+              </a>
             </div>
           </div>
 
-            {(() => {
-            if(this.data.myCoachCount == 0){
+          {(() => {
+            if(this.props.myCoachCount == 0){
               return(
                 <NoCoaches />
               );
@@ -51,19 +42,21 @@ CurrentCoaches = React.createClass({
 
             else{
               return(
-              <div>
-                <div className="row">
-                  <div className="col s12 m12 l12">
-                    <div className="card">
-                      <div className="card-content black-text">
-                        <span className="card-title">Current Coaches</span>
+                <div>
+                  <div className="row">
+                    <div className="col s12 m12 l12">
+                      <div className="card">
+                        <div className="card-content black-text">
+                          <span className="card-title">
+                            Current Coaches
+                          </span>
 
-                        <CoachTable coachData={this.data.myCoaches} />
+                          <CoachTable coachData={this.props.myCoaches} />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
               );
             }
           })()}
@@ -72,9 +65,9 @@ CurrentCoaches = React.createClass({
     }
 
     else{
-      return(<Unauthorized />);
+      return(
+        <Unauthorized />
+      );
     }
-
-
   }
-});
+}

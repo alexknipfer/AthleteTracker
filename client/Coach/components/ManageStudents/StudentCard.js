@@ -1,6 +1,6 @@
 import React from 'react';
 
-StudentCard = React.createClass({
+export default class StudentCard extends React.Component{
   removeStudent(id, firstname, lastname) {
     let previousWindowKeyDown = window.onkeydown;
       swal({
@@ -21,7 +21,7 @@ StudentCard = React.createClass({
           swal('Cancelled', 'Your user is safe now.', 'error');
         }
       });
-    },
+    }
 
     render() {
       return (
@@ -35,7 +35,7 @@ StudentCard = React.createClass({
                 <img className="activator" src="images/davemiller.jpg" />
               </div>
               <div className="card-content">
-              <a href="#"><i className="material-icons red-text" onClick={this.removeStudent.bind(null, student._id, student.firstname, student.lastname)}>clear</i></a>
+              <a href="#"><i className="material-icons red-text" onClick={this.removeStudent.bind(this, student._id, student.firstname, student.lastname)}>clear</i></a>
                 <span className="card-title activator grey-text text-darken-4">{student.firstname} {student.lastname}<i className="material-icons right">reorder</i></span>
                 <p><a href="/email">Email Student</a></p>
               </div>
@@ -68,4 +68,4 @@ StudentCard = React.createClass({
       </div>
       );
     }
-});
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-AdmissionsTable = React.createClass({
+export default class AdmissionsTable extends React.Component{
     removeAdmissions(id, firstname, lastname) {
     let previousWindowKeyDown = window.onkeydown;
       swal({
@@ -21,7 +21,7 @@ AdmissionsTable = React.createClass({
           swal('Cancelled', 'Your user is safe now.', 'error');
         }
       });
-    },
+    }
 
   render(){
     return(
@@ -43,7 +43,7 @@ AdmissionsTable = React.createClass({
                   <td>{admissions.firstname}</td>
                   <td>{admissions.lastname}</td>
                   <td>{admissions.emails[0].address}</td>
-                  <td><a href="#"><i className="material-icons red-text" onClick={this.removeAdmissions.bind(null, admissions._id, admissions.firstname, admissions.lastname)}>delete_forever</i></a></td>
+                  <td><a href="#"><i className="material-icons red-text" onClick={this.removeAdmissions.bind(this, admissions._id, admissions.firstname, admissions.lastname)}>delete_forever</i></a></td>
                 </tr>
               );
             })}
@@ -51,4 +51,4 @@ AdmissionsTable = React.createClass({
         </table>
       );
   }
-});
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-SchoolCard = React.createClass({
+export default class SchoolCard extends React.Component{
   render(){
     return(
       <div>
@@ -18,4 +18,4 @@ SchoolCard = React.createClass({
       </div>
       );
   }
-});
+}

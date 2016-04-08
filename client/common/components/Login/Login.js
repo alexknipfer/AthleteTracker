@@ -14,7 +14,7 @@ export default class Login extends React.Component{
       }
       else {
         Alert.success('Welcome!', {
-            position: 'bottom-left',
+            position: 'bottom-right',
             effect: 'stackslide',
             timeout: 3000
         });
