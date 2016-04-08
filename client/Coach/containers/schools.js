@@ -9,7 +9,10 @@ export default createContainer(() => {
     createdBy: Meteor.userId()
   }).fetch()
 
+  const mySchoolCount = SchoolData.find().count()
+
   return {
-    mySchools
+    mySchools,
+    mySchoolCount
   };
 }, Schools);
