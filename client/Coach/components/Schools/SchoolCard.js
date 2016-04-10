@@ -29,10 +29,19 @@ export default class SchoolCard extends React.Component{
       <div>
         {this.props.schoolData.map((schools) =>{
           return (
+            
             <li
               className="collection-item avatar"
               key={schools._id}>
+              <div>
+            <img className="activator" src="images/school4.jpg "/>
+        
+               <br>
+               </br>
+            </div>
+              
               <span className="title">
+               
                 <strong>
                   {schools.schoolName}
                 </strong>
@@ -50,11 +59,19 @@ export default class SchoolCard extends React.Component{
                 Coach Name:  {schools.schoolCoach}
                 <br>
                 </br>
+                Address:     {schools.schoolAddress}
+                <br>
+                </br>
+                {schools.schoolCity}, {schools.schoolState}
+                <br>
+                </br>
+                
               </p>
               <br>
               </br>
             </li>
           );
+          
         })}
       </div>
     );
