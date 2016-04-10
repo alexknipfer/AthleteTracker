@@ -1,5 +1,26 @@
-Meteor.publish("students", function() {
-    return StudentDataCoach.find({
+Meteor.publish("students", function(search) {
+
+  let query = {},
+  projection = {limit: 10, sort: {firstname: 1}};
+  
+  if(search){
+    let regex = new RegExp(search, 'i');
+
+    query = {
+      $or: [
+        {firstname: regex},
+        {lastname: regex}
+      ]
+    };
+
+    projection.limit = 100;
+  }
+
+  return StudentDataCoach.find(query, projection);
+
+
+
+    /*return StudentDataCoach.find({
         createdBy: this.userId
     }, {
         fields: {
@@ -21,5 +42,5 @@ Meteor.publish("students", function() {
             position: 1,
             createdBy: 1
         }
-    });
+    });*/
 });

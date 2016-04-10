@@ -5,6 +5,7 @@ import AddStudentCoach from '../ManageStudents/AddStudentCoach.js';
 import NoStudents from '../ManageStudents/NoStudents.js';
 import StudentFilter from '../ManageStudents/StudentFilter.js';
 import StudentCard from '../ManageStudents/StudentCard.js';
+import Search from '../ManageStudents/Search.js';
 
 export default class ManageStudents extends React.Component{
   render() {
@@ -43,7 +44,7 @@ export default class ManageStudents extends React.Component{
             else{
               return(
                 <div>
-                  <StudentFilter />
+                  <Search searching={this.props.searching} searchQuery={this.props.searchQuery}/>
                   <StudentCard studentData={this.props.myStudents} />
                 </div>
               );
