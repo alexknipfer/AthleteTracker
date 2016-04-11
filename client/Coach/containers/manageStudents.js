@@ -18,7 +18,7 @@ export default createContainer(() => {
     createdBy: Meteor.userId()
   }).fetch()
 
-  const myStudentCount = StudentDataCoach.find().count()
+  const myStudentCount = StudentDataCoach.find({createdBy: Meteor.userId()}).count()
 
   return {
     searchQuery,

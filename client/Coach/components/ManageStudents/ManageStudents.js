@@ -35,13 +35,14 @@ export default class ManageStudents extends React.Component{
           </div>
 
           {(() => {
-            if(this.props.myStudentCount == 0 && !this.props.searching){
+            if(this.props.myStudentCount == 0){
               return(
                 <NoStudents />
               );
             }
 
             else{
+              console.log(this.props.myStudentCount);
               return(
                 <div>
                   <Search
