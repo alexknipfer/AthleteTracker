@@ -1,6 +1,7 @@
 # LU Tracker
 
-LU Tracker is a web based application (Desktop and Mobile) that allows school coaches to track potential recruits.
+LU Tracker is a desktop and mobile web application that allows coaches to collect
+and track data on potential athletic recruits.
 
 ## Functionality
 
