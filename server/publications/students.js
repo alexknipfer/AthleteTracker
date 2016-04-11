@@ -1,8 +1,9 @@
 Meteor.publish("students", function(search) {
+  check( search, Match.OneOf( String, null, undefined ) );
 
   let query = {},
   projection = {limit: 10, sort: {firstname: 1}};
-  
+
   if(search){
     let regex = new RegExp(search, 'i');
 

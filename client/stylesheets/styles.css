@@ -68,3 +68,8 @@ body{
 .dropdown-content{
   min-width: 150px;
 }
+
+.search-style{
+  margin-bottom: 30px;
+  opacity: 0.5;
+}

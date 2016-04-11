@@ -35,7 +35,7 @@ export default class ManageStudents extends React.Component{
           </div>
 
           {(() => {
-            if(this.props.myStudentCount == 0){
+            if(this.props.myStudentCount == 0 && !this.props.searching){
               return(
                 <NoStudents />
               );
@@ -44,8 +44,21 @@ export default class ManageStudents extends React.Component{
             else{
               return(
                 <div>
-                  <Search searching={this.props.searching} searchQuery={this.props.searchQuery}/>
-                  <StudentCard studentData={this.props.myStudents} />
+                  <Search
+                    searching={this.props.searching}
+                    searchQuery={this.props.searchQuery}/>
+                  {(() => {
+                    if(this.props.myStudentCount != 0 ) {
+                      return (
+                        <StudentCard studentData={this.props.myStudents} />
+                      );
+                    }
+                    else{
+                      return(
+                        <h5 className="red-text">No Results found...</h5>
+                      );
+                    }
+                  })()}
                 </div>
               );
             }
