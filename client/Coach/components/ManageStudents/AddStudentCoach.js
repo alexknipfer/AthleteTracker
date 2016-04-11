@@ -41,7 +41,16 @@ export default class AddStudentCoach extends React.Component{
         });
       }
     });
+  }
 
+  componentDidMount(){
+    $('.datepicker').pickadate({
+      selectMonths: true, // Creates a dropdown to control month
+      selectYears: 100, // Creates a dropdown of 15 years to control year
+      min: new Date(1940,1,1),
+      //max: new Date(2016,7,14)
+      max: true
+    });
   }
 
   render(){
@@ -111,11 +120,10 @@ export default class AddStudentCoach extends React.Component{
 
                     <div className="col s12 m3 l3">
                       <input
-                        type="text"
+                        type="date"
                         ref="dob"
-                        className="validate"
+                        className="datepicker"
                         placeholder="Date of Birth"
-                        minLength={1}
                         required />
                     </div>
 
