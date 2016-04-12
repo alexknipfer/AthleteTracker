@@ -35,14 +35,16 @@ export default class ForgotPassword extends React.Component{
         <div className="card login-padding">
           <div className="card-content black-text">
             <span className="card-title">Reset Password</span>
-
+            <p className="small-Text"><i>Enter your email associated with your account below.
+            We'll send you a password reset link to your email.</i></p>
+            <br />
             <form onSubmit={this.handleSubmit.bind(this)}>
               <div className="row">
                 <div className="col s12">
                   <input type="text" ref="email" className="validate" placeholder="Email" minLength={2} required />
                 </div>
               </div>
-              <button className="btn waves-effect login grey" type="submit">Send Email</button>
+              <button className="btn waves-effect login grey" type="submit">Reset Password</button>
             </form>
           </div>
         </div>
