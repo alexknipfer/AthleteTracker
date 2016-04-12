@@ -15,9 +15,14 @@ Meteor.publish("students", function(search) {
     };
 
     projection.limit = 100;
+
+    return StudentDataCoach.find(query, projection);
+  }
+  else{
+    return StudentDataCoach.find();
   }
 
-  return StudentDataCoach.find(query, projection);
+
 
 
 
