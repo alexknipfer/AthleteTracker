@@ -73,3 +73,11 @@ body{
   margin-bottom: 30px;
   opacity: 0.5;
 }
+
+.dashed-line{
+  border:none;
+  border-top:1px dotted #f00;
+  color:#fff;
+  background-color:#fff;
+  height:1px;
+}

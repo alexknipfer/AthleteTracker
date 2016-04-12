@@ -35,8 +35,10 @@ export default class ForgotPassword extends React.Component{
         <div className="card login-padding">
           <div className="card-content black-text">
             <span className="card-title">Reset Password</span>
+            <hr className="dashed-line" />
             <p className="small-Text"><i>Enter your email associated with your account below.
             We'll send you a password reset link to your email.</i></p>
+            <hr className="dashed-line"/>
             <br />
             <form onSubmit={this.handleSubmit.bind(this)}>
               <div className="row">
