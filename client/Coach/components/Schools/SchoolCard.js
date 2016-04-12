@@ -33,12 +33,6 @@ export default class SchoolCard extends React.Component{
             <li
               className="collection-item avatar"
               key={schools._id}>
-              <div>
-            <img className="activator" src="images/school4.jpg "/>
-        
-               <br>
-               </br>
-            </div>
               
               <span className="title">
                

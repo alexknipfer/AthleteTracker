@@ -33,6 +33,12 @@ export default class Login extends React.Component{
       if(Roles.userIsInRole(Meteor.userId(), "coach")){
         FlowRouter.go("/manageStudents");
       }
+      
+      if(Roles.userIsInRole(Meteor.userId(), "admissions")){
+        FlowRouter.go("/enrolledStudents");
+      }
+
+
 
     });
   }

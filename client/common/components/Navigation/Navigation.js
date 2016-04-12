@@ -2,6 +2,7 @@ import React from 'react';
 import CommonNav from './CommonNav.js';
 import CoachNav from './CoachNav.js';
 import AdminNav from './AdminNav.js';
+import AdmissionsNav from './AdmissionsNav.js';
 
 export default class Navigation extends React.Component{
 
@@ -12,9 +13,15 @@ export default class Navigation extends React.Component{
       );
     }
 
-    if (Roles.userIsInRole(this.props.currentUser, "coach")) {
+    else if (Roles.userIsInRole(this.props.currentUser, "coach")) {
       return (
         <CoachNav userName={this.props.currentUser.username}/>
+      );
+    }
+    
+    else if (Roles.userIsInRole(this.props.currentUser, "admissions")) {
+      return (
+          <AdmissionsNav /> 
       );
     }
 
