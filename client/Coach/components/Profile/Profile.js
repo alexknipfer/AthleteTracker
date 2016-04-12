@@ -4,9 +4,14 @@ import Loading from '../../../common/components/Loading/Loading.js';
 
 export default class Profile extends React.Component{
 
-  updateProfile(){
+  updateProfileFirstName(){
     const firstname = this.refs.firstname.value;
-    Meteor.call("updateProfile", {firstname});
+    Meteor.call("updateProfileFirstName", {firstname});
+  }
+
+  updateProfileLastName(){
+    const lastname = this.refs.lastname.value;
+    Meteor.call("updateProfileLastName", {lastname})
   }
 
   render() {
@@ -50,7 +55,7 @@ export default class Profile extends React.Component{
                       <td>
                         <input
                           ref="firstname"
-                          onChange={this.updateProfile.bind(this)}
+                          onChange={this.updateProfileFirstName.bind(this)}
                           defaultValue={this.props.currentUser.firstname} />
                       </td>
                     </tr>
@@ -59,7 +64,10 @@ export default class Profile extends React.Component{
                         <b>Lastname:</b>
                       </td>
                       <td>
-                        {this.props.currentUser.lastname}
+                        <input
+                          ref="lastname"
+                          onChange={this.updateProfileLastName.bind(this)}
+                          defaultValue={this.props.currentUser.lastname} />
                       </td>
                     </tr>
                     <tr>
