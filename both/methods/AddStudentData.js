@@ -73,5 +73,24 @@ const AddStudentData = new ValidatedMethod({
       position: position,
       createdBy: this.userId
     });
+    TempStudents.insert({
+      firstname: firstname,
+      lastname: lastname,
+      gradYear: gradYear,
+      gpa: gpa,
+      act: act,
+      dob: dob,
+      phoneNumber: phoneNumber,
+      email: email,
+      city: city,
+      state: state,
+      height: height,
+      weight: weight,
+      speedHalf: speedHalf,
+      speedFull: speedFull,
+      handOrientation: handOrientation,
+      position: position,
+      createdBy: this.userId
+    });
   }
 });

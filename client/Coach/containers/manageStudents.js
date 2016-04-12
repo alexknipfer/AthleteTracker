@@ -12,13 +12,15 @@ export default createContainer(() => {
       }, 300 );
     });
 
+  const totalStudentsHandle = Meteor.subscribe("totalStudents");
 
-
-  const loading = !handle.ready();
+  const loading = !handle.ready() && !totalStudentsHandle.ready();
 
   const myStudents = StudentDataCoach.find({
     createdBy: Meteor.userId()
   }).fetch()
+
+  const totalStudents = TempStudents.find().count();
 
   const myStudentCount = StudentDataCoach.find({createdBy: Meteor.userId()}).count()
 
@@ -27,5 +29,6 @@ export default createContainer(() => {
     searching,
     myStudents,
     myStudentCount,
+    totalStudents
   };
 }, ManageStudents);

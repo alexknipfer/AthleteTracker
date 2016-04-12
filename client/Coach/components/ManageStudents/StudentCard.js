@@ -15,7 +15,7 @@ export default class StudentCard extends React.Component{
         window.onkeydown = previousWindowKeyDown;
         if(isConfirm){
           swal('Deleted!', 'User has been deleted.', 'success');
-          Meteor.call("removeStudent", id);
+          Meteor.call("removeStudent", id,firstname, lastname);
         }
         else{
           swal('Cancelled', 'Your user is safe now.', 'error');

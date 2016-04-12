@@ -39,15 +39,14 @@ export default class ManageStudents extends React.Component{
           </div>
 
           {(() => {
-            if(this.getStudentCount() == null && !this.props.searching){
-              console.log("hello");
+            if(this.props.totalStudents == 0){
               return(
                 <NoStudents />
               );
             }
 
             else{
-              console.log("HELLO");
+              console.log(this.props.totalStudents);
               return(
                 <div>
                   <Search
@@ -59,7 +58,7 @@ export default class ManageStudents extends React.Component{
                         <StudentCard studentData={this.props.myStudents} />
                       );
                     }
-                    else if(this.getStudentCount() != 0 && this.props.searching){
+                    else{
                       return(
                         <h5 className="red-text">No Results found...</h5>
                       );

@@ -4,7 +4,6 @@ const getStudentCount = new ValidatedMethod({
 
   run() {
     let count = StudentDataCoach.find().count();
-    console.log(count);
     return count;
   }
 });

@@ -1,5 +1,5 @@
 Meteor.publish("totalStudents", function() {
-    return StudentDataCoach.find({
+    return TempStudents.find({
         createdBy: this.userId
     });
 });
