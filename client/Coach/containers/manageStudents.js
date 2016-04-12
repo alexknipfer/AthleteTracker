@@ -12,6 +12,8 @@ export default createContainer(() => {
       }, 300 );
     });
 
+
+
   const loading = !handle.ready();
 
   const myStudents = StudentDataCoach.find({
@@ -24,6 +26,6 @@ export default createContainer(() => {
     searchQuery,
     searching,
     myStudents,
-    myStudentCount
+    myStudentCount,
   };
 }, ManageStudents);

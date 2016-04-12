@@ -50,7 +50,7 @@ export default class Profile extends React.Component{
                       <td>
                         <input
                           ref="firstname"
-                          onChange={this.updateProfile}
+                          onChange={this.updateProfile.bind(this)}
                           defaultValue={this.props.currentUser.firstname} />
                       </td>
                     </tr>
@@ -67,7 +67,9 @@ export default class Profile extends React.Component{
                         <b>Email:</b>
                       </td>
                       <td>
-                        {this.props.currentUser.emails[0].address}
+                        <input
+                          disabled
+                          defaultValue={this.props.currentUser.emails[0].address} />
                       </td>
                     </tr>
                     <tr>

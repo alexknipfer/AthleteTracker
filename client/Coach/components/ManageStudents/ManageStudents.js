@@ -8,6 +8,10 @@ import StudentCard from '../ManageStudents/StudentCard.js';
 import Search from '../ManageStudents/Search.js';
 
 export default class ManageStudents extends React.Component{
+  getStudentCount(){
+    return Meteor.call("getStudentCount")
+  }
+
   render() {
     if (this.props.loading) {
       return (
@@ -35,26 +39,27 @@ export default class ManageStudents extends React.Component{
           </div>
 
           {(() => {
-            if(this.props.myStudentCount == 0 && !this.props.searching){
-              console.log("HELO");
+            if(this.getStudentCount() == null && !this.props.searching){
+              console.log("hello");
               return(
                 <NoStudents />
               );
             }
 
             else{
+              console.log("HELLO");
               return(
                 <div>
                   <Search
                     searching={this.props.searching}
                     searchQuery={this.props.searchQuery}/>
                   {(() => {
-                    if(this.props.myStudentCount != 0 ) {
+                    if(this.props.myStudentCount != 0 && this.props.searching) {
                       return (
                         <StudentCard studentData={this.props.myStudents} />
                       );
                     }
-                    else{
+                    else if(this.getStudentCount() != 0 && this.props.searching){
                       return(
                         <h5 className="red-text">No Results found...</h5>
                       );
