@@ -1,7 +1,7 @@
 StudentDataCoach = new Mongo.Collection('StudentDataCoach');
 
 if(Meteor.isServer){
-  StudentDataCoach._ensureIndex({firstname: 1, lastname: 1});
+  StudentDataCoach._ensureIndex({firstname: 1, lastname: 1, gradYear: 1, gpa: 1, act: 1, email: 1, height: 1, weight: 1, handOrientation: 1,position: 1});
 }
 
 // Deny all client-side updates on the Lists collection
