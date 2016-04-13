@@ -10,7 +10,15 @@ Meteor.publish("students", function(search) {
     query = {
       $or: [
         {firstname: regex},
-        {lastname: regex}
+        {lastname: regex},
+        {gradyear: regex},
+        {gpa: regex},
+        {act: regex},
+        {email: regex},
+        {height: regex},
+        {weight: regex},
+        {handOrientation: regex},
+        {position: regex}
       ]
     };
 
