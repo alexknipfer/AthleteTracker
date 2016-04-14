@@ -88,7 +88,8 @@ export default class AddCoach extends React.Component{
                         ref="coachEmail"
                         className="validate"
                         placeholder="Email"
-                        minLength={2}/>
+                        minLength={2}
+                        required />
                     </div>
                   </div>
 
