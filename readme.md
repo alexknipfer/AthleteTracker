@@ -21,7 +21,7 @@ and track data on potential athletic recruits.
 
 ## Version
 
-0.6
+0.6 - pre-release
 
 ## Authors
 
