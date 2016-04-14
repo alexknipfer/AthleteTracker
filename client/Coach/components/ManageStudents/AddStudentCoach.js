@@ -26,18 +26,18 @@ export default class AddStudentCoach extends React.Component{
     Meteor.call("AddStudentData", {firstname, lastname, gradYear, gpa, act, dob, phoneNumber, email, city, state, height, weight, speedHalf, speedFull, handOrientation, position}, (error) => {
       if(error){
         Alert.error(error.reason, {
-            position: 'bottom',
-            effect: 'stackslide',
-            timeout: 3000
+          position: 'bottom',
+          effect: 'stackslide',
+          timeout: 3000
         });
       }
 
       else{
         FlowRouter.go("/manageStudents");
         Alert.success("Student Added Successfully!", {
-            position: 'bottom',
-            effect: 'stackslide',
-            timeout: 3000
+          position: 'bottom',
+          effect: 'stackslide',
+          timeout: 3000
         });
       }
     });
@@ -91,9 +91,9 @@ export default class AddStudentCoach extends React.Component{
                         type="text"
                         ref="gradYear"
                         className="validate"
-                        placeholder="Grad Year"
+                        placeholder="Grad Year (Optional)"
                         minLength={4}
-                        required />
+                        />
                     </div>
                   </div>
 
@@ -103,9 +103,9 @@ export default class AddStudentCoach extends React.Component{
                         type="text"
                         ref="gpa"
                         className="validate"
-                        placeholder="GPA"
+                        placeholder="GPA (Optional)"
                         minLength={3}
-                        required />
+                        />
                     </div>
 
                     <div className="col s12 m3 l3">
@@ -113,9 +113,9 @@ export default class AddStudentCoach extends React.Component{
                         type="text"
                         ref="act"
                         className="validate"
-                        placeholder="ACT / SAT"
+                        placeholder="ACT / SAT (Optional)"
                         minLength={1}
-                        required />
+                        />
                     </div>
 
                     <div className="col s12 m3 l3">
@@ -132,9 +132,9 @@ export default class AddStudentCoach extends React.Component{
                         type="text"
                         ref="phoneNumber"
                         className="validate"
-                        placeholder="Phone Number"
+                        placeholder="Phone Number (Optional)"
                         minLength={1}
-                        required />
+                        />
                     </div>
                   </div>
 
@@ -196,9 +196,9 @@ export default class AddStudentCoach extends React.Component{
                         type="text"
                         ref="speedHalf"
                         className="validate"
-                        placeholder="50 Fr"
+                        placeholder="50 Fr (Optional)"
                         minLength={1}
-                        required />
+                        />
                     </div>
 
                     <div className="col s12 m3 l3">
@@ -206,9 +206,9 @@ export default class AddStudentCoach extends React.Component{
                         type="text"
                         ref="speedFull"
                         className="validate"
-                        placeholder="100 Fr"
+                        placeholder="100 Fr (Optional)"
                         minLength={1}
-                        required />
+                        />
                     </div>
                   </div>
 
