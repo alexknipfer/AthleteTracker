@@ -48,7 +48,6 @@ export default class AddStudentCoach extends React.Component{
       selectMonths: true, // Creates a dropdown to control month
       selectYears: 100, // Creates a dropdown of 15 years to control year
       min: new Date(1940,1,1),
-      //max: new Date(2016,7,14)
       max: true
     });
   }
