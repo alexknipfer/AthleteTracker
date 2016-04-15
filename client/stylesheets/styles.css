@@ -81,3 +81,7 @@ body{
   background-color:#fff;
   height:1px;
 }
+
+.edit-padding{
+  padding: 10px;
+}
