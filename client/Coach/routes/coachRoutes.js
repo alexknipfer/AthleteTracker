@@ -9,6 +9,7 @@ import ManageStudents from '../containers/manageStudents.js';
 import Profile from '../containers/profile.js';
 import Schools from '../containers/schools.js';
 import AddSchool from '../components/Schools/AddSchool.js';
+import EditStudent from '../../Coach/containers/editStudent.js';
 
 const coachRoutes = FlowRouter.group({
   name: 'coachRoutes',
@@ -74,6 +75,14 @@ coachRoutes.route('/addAdmissions', {
   action(){
     mount(Layout,{
       content: <AddAdmissions />
+    });
+  }
+});
+
+coachRoutes.route('/editAthlete/:_id', {
+  action(){
+    mount(Layout,{
+      content: <EditStudent />
     });
   }
 });

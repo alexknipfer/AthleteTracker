@@ -23,6 +23,10 @@ export default class StudentCard extends React.Component{
       });
     }
 
+    editStudent(id){
+      FlowRouter.go("/editAthlete/" + id);
+    }
+
     render() {
       return (
         <div>
@@ -37,7 +41,7 @@ export default class StudentCard extends React.Component{
               <div className="card-content">
               <a href="#"><i className="material-icons red-text" onClick={this.removeStudent.bind(this, student._id, student.firstname, student.lastname)}>clear</i></a>
                 <span className="card-title activator grey-text text-darken-4">{student.firstname} {student.lastname}<i className="material-icons right">reorder</i></span>
-                <p><a href="/email">Email Student</a></p>
+                <p><a href="/email">Email Student</a> | <a href="#" onClick={this.editStudent.bind(this, student._id)}>Edit Athlete</a></p>
               </div>
               <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4">Student Name<i className="material-icons right">close</i></span>

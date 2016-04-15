@@ -26,6 +26,7 @@ Meteor.publish("students", function(search) {
 
     return StudentDataCoach.find(query, projection);
   }
+
   else{
     return StudentDataCoach.find();
   }

@@ -46,7 +46,6 @@ export default class ManageStudents extends React.Component{
             }
 
             else{
-              console.log(this.props.totalStudents);
               return(
                 <div>
                   <Search
