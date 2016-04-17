@@ -3,6 +3,16 @@ import Alert from 'react-s-alert';
 
 export default class AdmissionsNav extends React.Component{
 
+  componentDidMount() {
+    $('.button-collapse').sideNav({
+      menuWidth: 210,
+      edge: 'left',
+      closeOnClick: true
+    });
+
+    $(".dropdown-button").dropdown();
+  }
+
   logout(){
     Meteor.logout();
     Alert.error('Goodbye', {
