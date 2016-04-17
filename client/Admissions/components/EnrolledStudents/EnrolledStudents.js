@@ -13,32 +13,19 @@ export default class EnrolledStudents extends React.Component{
     }
 
     else if (Meteor.loggingIn()) {
-      console.log("LOGGIN IN");
       return (
         <Loading />
       );
     }
 
     else if(Roles.userIsInRole(Meteor.userId(), "admissions")) {
+      console.log("HELLO");
       return (
         <div>
           <h1>Admissions Student Page</h1>
-          <div className="row">
-            <div col="s12 m4 l4">
-              <a
-                className="btn-floating btn-large waves-effect waves-light red right float-button z-depth-1"
-                href="/addEnrolledStudent">
-                <i className="material-icons">add</i>
-              </a>
-            </div>
-          </div>
         </div>
       );
     }
-    else {
-      return (
-        <Unauthorized />
-      );
-    }
+
   }
 }
