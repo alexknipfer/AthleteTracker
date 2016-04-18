@@ -3,9 +3,6 @@ import Alert from 'react-s-alert';
 import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.js';
 import Loading from '../../../common/components/Loading/Loading.js';
 
-
-
-
 export default class AddEnrolledStudent extends React.Component{
   handleSubmit(e){
     e.preventDefault();
@@ -30,6 +27,14 @@ export default class AddEnrolledStudent extends React.Component{
           position: 'bottom',
           effect: 'stackslide',
           timeout: 3000
+        });
+        Meteor.call("sendEnrolledEmail", (error) => {
+          if(error){
+            console.log("ERROR");
+          }
+          else{
+            console.log("SEND EMAIL");
+          }
         });
       }
     });
