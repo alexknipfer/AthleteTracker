@@ -54,7 +54,10 @@ export default class ManageStudents extends React.Component{
                   {(() => {
                     if(this.props.myStudentCount != 0 && this.props.searching) {
                       return (
-                        <StudentCard studentData={this.props.myStudents} />
+                        <div>
+                          <p>Your currently viewing <b>{this.props.myStudentCount}</b> athletes.</p>
+                          <StudentCard studentData={this.props.myStudents} />
+                        </div>
                       );
                     }
                     else{

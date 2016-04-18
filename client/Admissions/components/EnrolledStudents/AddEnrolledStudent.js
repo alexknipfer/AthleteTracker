@@ -30,7 +30,7 @@ export default class AddEnrolledStudent extends React.Component{
         });
         Meteor.call("sendEnrolledEmail", (error) => {
           if(error){
-            console.log("ERROR");
+            console.log(error);
           }
           else{
             console.log("SEND EMAIL");
