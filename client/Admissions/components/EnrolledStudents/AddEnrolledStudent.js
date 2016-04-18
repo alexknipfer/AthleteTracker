@@ -23,17 +23,16 @@ export default class AddEnrolledStudent extends React.Component{
 
       else{
         FlowRouter.go("/enrolledStudents");
-        Alert.success("Student Added Successfully!", {
-          position: 'bottom',
-          effect: 'stackslide',
-          timeout: 3000
-        });
-        Meteor.call("sendEnrolledEmail", (error) => {
+        Meteor.call("sendEnrolledEmail", {firstname, lastname, studentID}, (error) => {
           if(error){
-            console.log(error);
+            Alert.error(error.reason, {
+              position: 'bottom',
+              effect: 'stackslide',
+              timeout: 3000
+            });
           }
           else{
-            console.log("SEND EMAIL");
+            swal("Student Added Successfully!", "The coach will be notified via email that the student is now enrolled!");
           }
         });
       }

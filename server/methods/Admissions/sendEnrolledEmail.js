@@ -1,13 +1,24 @@
 const sendEnrolledEmail = new ValidatedMethod({
   name: 'sendEnrolledEmail',
-  validate: null,
-
-  run() {
+  validate: new SimpleSchema({
+    firstname: {
+      type: String
+    },
+    lastname: {
+      type: String
+    },
+    studentID:{
+      type: String
+    }
+  }).validator(),
+  run({
+    firstname, lastname, studentID
+  }) {
     Email.send({
-      from: "alexanderknipfer@gmail.com",
+      from: "admin@lutracker.herokuapp.com",
       to: "alexanderknipfer@gmail.com",
-      subject: "Subject",
-      text: "Here is some text"
+      subject: "New Student Enrolled",
+      text: "Hello! " + firstname + " " + lastname + " is now enrolled at Lindenwood University. Their Student ID is: " + studentID + "."
     });
   }
 });
