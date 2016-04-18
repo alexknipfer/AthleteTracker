@@ -31,11 +31,11 @@ export default class AdmissionsNav extends React.Component{
             <a href="#" className="brand-logo bold"><i className="material-icons large left">trending_up</i>LU Tracker</a>
             <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
             <ul className="right hide-on-med-and-down">
-              <li><a href="#">Manage Students</a></li>
+              <li><a href="/enrolledStudents">Manage Students</a></li>
               <li><a onClick={this.logout.bind(this)}>Logout</a></li>
             </ul>
             <ul className="side-nav" id="mobile-demo">
-              <li><a href="#">Manage Students</a></li>
+              <li><a href="/enrolledStudents">Manage Students</a></li>
               <li><a onClick={this.logout.bind(this)}>Logout</a></li>
             </ul>
           </div>
