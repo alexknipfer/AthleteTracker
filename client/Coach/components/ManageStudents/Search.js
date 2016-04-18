@@ -3,7 +3,6 @@ import React from 'react';
 export default class Search extends React.Component{
 
   search(e){
-    console.log("HELLO");
     let value = this.refs.search.value;
     if(value !== ''){
       this.props.searchQuery.set(value);
