@@ -6,7 +6,6 @@ import AddAdmissions from '../components/ManageAdmissions/AddAdmissions.js';
 import CurrentAdmissions from '../containers/currentAdmissions.js';
 import AddStudentCoach from '../components/ManageStudents/AddStudentCoach.js';
 import ManageStudents from '../containers/manageStudents.js';
-import Profile from '../containers/profile.js';
 import Schools from '../containers/schools.js';
 import AddSchool from '../components/Schools/AddSchool.js';
 import EditStudent from '../../Coach/containers/editStudent.js';
@@ -51,14 +50,6 @@ coachRoutes.route('/email', {
   action(){
     mount(Layout,{
       content: <Email />
-    });
-  }
-});
-
-coachRoutes.route('/profile', {
-  action(){
-    mount(Layout,{
-      content: <Profile />
     });
   }
 });

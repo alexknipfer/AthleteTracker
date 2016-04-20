@@ -6,6 +6,7 @@ import ForgotPassword from '../components/PasswordManagement/ForgotPassword/Forg
 import ResetPassword from '../components/PasswordManagement/ResetPassword/ResetPassword.js';
 import Layout from '../components/Layout/Layout.js';
 import NotFound from '../components/NotFound/NotFound.js';
+import Profile from '../containers/profile.js';
 
 const commonRoutes = FlowRouter.group({
   name: 'commonRoutes',
@@ -30,6 +31,14 @@ FlowRouter.notFound = {
       });
     }
 };
+
+commonRoutes.route('/profile', {
+  action(){
+    mount(Layout,{
+      content: <Profile />
+    });
+  }
+});
 
 commonRoutes.route('/changePassword', {
   action(){

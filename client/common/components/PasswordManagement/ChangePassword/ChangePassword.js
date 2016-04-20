@@ -1,5 +1,6 @@
 import React from 'react';
 import Alert from 'react-s-alert';
+import Unauthorized from '../../Unauthorized/Unauthorized.js';
 
 export default class ChangePassword extends React.Component{
   handleSubmit(e){
@@ -28,6 +29,7 @@ export default class ChangePassword extends React.Component{
   }
 
  render(){
+   if (Roles.userIsInRole(Meteor.userId(), "coach") || Roles.userIsInRole(Meteor.userId(), "admin") || Roles.userIsInRole(Meteor.userId(), "admissions")){
    return (
      <div className="row">
       <div className="col s12 m8 l6 offset-l3 offset-m2">
@@ -55,6 +57,12 @@ export default class ChangePassword extends React.Component{
       </div>
     </div>
     );
+  }
+  else{
+    return(
+      <Unauthorized />
+    );
+  }
  }
 
 }

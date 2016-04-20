@@ -42,7 +42,7 @@ export default class EditStudent extends React.Component{
       if(Roles.userIsInRole(Meteor.userId(), "coach")){
         return (
           <div className="row">
-            <div className="col s12 m8 l6 offset-l3 offset-m2">
+            <div className="col s12">
               <div className="card edit-padding">
                 <a href="/manageStudents" className="right">
                   Return Home
@@ -53,7 +53,7 @@ export default class EditStudent extends React.Component{
                   </span>
                   <form onSubmit={this.handleSubmit.bind(this)}>
                     <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="grad_Year">
                           Graduation Year:
                         </label>
@@ -63,10 +63,8 @@ export default class EditStudent extends React.Component{
                           defaultValue={this.props.currentStudent.gradYear}
                           ref="editGradYear" />
                       </div>
-                    </div>
 
-                    <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_gpa">GPA:</label>
                         <input
                           type="text"

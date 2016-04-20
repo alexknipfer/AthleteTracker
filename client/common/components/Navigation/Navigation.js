@@ -18,10 +18,10 @@ export default class Navigation extends React.Component{
         <CoachNav userName={this.props.currentUser.username}/>
       );
     }
-    
+
     else if (Roles.userIsInRole(this.props.currentUser, "admissions")) {
       return (
-          <AdmissionsNav /> 
+          <AdmissionsNav userName={this.props.currentUser.username} /> 
       );
     }
 
