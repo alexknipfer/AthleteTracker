@@ -75,7 +75,7 @@ export default class EditStudent extends React.Component{
                     </div>
 
                     <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_ACT">ACT:</label>
                         <input
                           type="text"
@@ -83,10 +83,8 @@ export default class EditStudent extends React.Component{
                           defaultValue={this.props.currentStudent.act}
                           ref="editACT" />
                       </div>
-                    </div>
 
-                    <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_DOB">
                           Date of Birth:
                         </label>
@@ -99,7 +97,7 @@ export default class EditStudent extends React.Component{
                     </div>
 
                     <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_Phone">
                           Phone Number:
                         </label>
@@ -109,10 +107,8 @@ export default class EditStudent extends React.Component{
                           defaultValue={this.props.currentStudent.phoneNumber}
                           ref="editPhoneNumber" />
                       </div>
-                    </div>
 
-                    <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_Email">Email:</label>
                         <input
                           type="text"
@@ -123,7 +119,7 @@ export default class EditStudent extends React.Component{
                     </div>
 
                     <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_City">City:</label>
                         <input
                           type="text"
@@ -131,10 +127,8 @@ export default class EditStudent extends React.Component{
                           defaultValue={this.props.currentStudent.city}
                           ref="editCity" />
                       </div>
-                    </div>
 
-                    <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_State">State:</label>
                         <input
                           type="text"
@@ -145,7 +139,7 @@ export default class EditStudent extends React.Component{
                     </div>
 
                     <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_Height">Height:</label>
                         <input
                           type="text"
@@ -153,10 +147,8 @@ export default class EditStudent extends React.Component{
                           defaultValue={this.props.currentStudent.height}
                           ref="editHeight" />
                       </div>
-                    </div>
 
-                    <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_Weight">Weight:</label>
                         <input
                           type="text"
@@ -167,7 +159,7 @@ export default class EditStudent extends React.Component{
                     </div>
 
                     <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_Half">
                           50 Fr:
                         </label>
@@ -177,10 +169,8 @@ export default class EditStudent extends React.Component{
                           defaultValue={this.props.currentStudent.speedHalf}
                           ref="editHalfSpeed" />
                       </div>
-                    </div>
 
-                    <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_Full">
                           100 Fr:
                         </label>
@@ -193,7 +183,7 @@ export default class EditStudent extends React.Component{
                     </div>
 
                     <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_Hand">
                           Dominant Hand:
                         </label>
@@ -203,10 +193,8 @@ export default class EditStudent extends React.Component{
                           defaultValue={this.props.currentStudent.handOrientation}
                           ref="editDominantHand" />
                       </div>
-                    </div>
 
-                    <div className="row">
-                      <div className="col s12">
+                      <div className="col s12 m6 l6">
                         <label for="edit_Position">Position:</label>
                         <input
                           type="text"
