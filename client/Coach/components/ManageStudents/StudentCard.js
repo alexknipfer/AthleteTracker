@@ -44,7 +44,7 @@ export default class StudentCard extends React.Component{
                 <p><a href="/email">Email Student</a> | <a href="#" onClick={this.editStudent.bind(this, student._id)}>Edit Athlete</a></p>
               </div>
               <div className="card-reveal">
-                <span className="card-title grey-text text-darken-4">Student Name<i className="material-icons right">close</i></span>
+                <span className="card-title grey-text text-darken-4">{student.firstname} {student.lastname}<i className="material-icons right">close</i></span>
                 <ul>
                   <li>Graduation Year: {student.gradYear}</li>
                   <li>GPA: {student.gpa}</li>
