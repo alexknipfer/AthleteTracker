@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'react-mounter';
 import Layout from '../../common/components/Layout/Layout.js';
-import Email from '../components/Email/Email.js';
+import Email from '../containers/email.js';
 import AddAdmissions from '../components/ManageAdmissions/AddAdmissions.js';
 import CurrentAdmissions from '../containers/currentAdmissions.js';
 import AddStudentCoach from '../components/ManageStudents/AddStudentCoach.js';
@@ -46,7 +46,7 @@ coachRoutes.route('/schools', {
   }
 });
 
-coachRoutes.route('/email', {
+coachRoutes.route('/email/:email', {
   action(){
     mount(Layout,{
       content: <Email />
