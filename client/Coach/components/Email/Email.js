@@ -13,11 +13,19 @@ export default class Email extends React.Component{
 
     Meteor.call("sendStudentEmail", {studentEmail, emailSubject, emailBody}, (error) => {
       if(error){
-        console.log(error);
+        Alert.error(error.reason, {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
       else{
-        console.log("EMAIL SENT!");
         FlowRouter.go('/manageStudents');
+        Alert.success("Email Sent!", {
+            position: 'bottom',
+            effect: 'stackslide',
+            timeout: 3000
+        });
       }
     });
   }
