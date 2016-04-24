@@ -26,7 +26,7 @@
     "react-addons-pure-render-mixin": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-mounter": "^1.2.0",
-    "react-s-alert": "^1.1.1",
+    "react-s-alert": "^1.1.2",
     "twilio": "^2.9.1"
   }
 }
