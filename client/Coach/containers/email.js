@@ -3,12 +3,14 @@ import Email from '../components/Email/Email.js';
 
 export default createContainer(() => {
 
+  const studentEmail = FlowRouter.getParam('email');
 
-  const handle = Meteor.subscribe("editStudentsPublication");
+  const handle = Meteor.subscribe("emailStudentsPublication");
 
   const loading = !handle.ready();
 
   return {
-      loading
+      loading,
+      studentEmail
     };
 }, Email);

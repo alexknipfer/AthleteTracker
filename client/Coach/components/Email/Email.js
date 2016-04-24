@@ -3,9 +3,32 @@ import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.j
 import Loading from '../../../common/components/Loading/Loading.js';
 
 export default class Email extends React.Component{
-  render(){
+  handleSubmit(e){
+    e.preventDefault();
+    const studentEmail = this.props.studentEmail;
+    const emailSubject = this.refs.emailSubject.value;
+    const emailBody = this.refs.emailBody.value;
 
-    if (Meteor.loggingIn()) {
+    console.log(studentEmail);
+
+    Meteor.call("sendStudentEmail", {studentEmail, emailSubject, emailBody}, (error) => {
+      if(error){
+        console.log(error);
+      }
+      else{
+        console.log("EMAIL SENT!");
+        FlowRouter.go('/manageStudents');
+      }
+    });
+  }
+  render(){
+    if(this.props.loading){
+      return(
+        <Loading />
+      );
+    }
+
+    else if(Meteor.loggingIn()) {
       return (
         <Loading />
       );
@@ -20,12 +43,24 @@ export default class Email extends React.Component{
                 <span className="card-title">
                   Email Athlete
                 </span>
-                <form>
+                <form onSubmit={this.handleSubmit.bind(this)}>
                   <div className="row">
                     <div className="input-field col l12">
                       <label className="active" for="email_address">To:</label>
                       <input
                         id="email_address"
+                        type="text"
+                        defaultValue={this.props.studentEmail}
+                        className="validate" />
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="input-field col l12">
+                      <label className="active" for="email_Subject">Subject:</label>
+                      <input
+                        id="email_Subject"
+                        ref="emailSubject"
                         type="text"
                         className="validate" />
                     </div>
@@ -34,17 +69,17 @@ export default class Email extends React.Component{
                   <div className="row">
                     <div className="input-field col l12">
                       <textarea
-                        id="email_subject"
+                        id="email_Body"
+                        ref="emailBody"
                         className="materialize-textarea">
                       </textarea>
-                      <label for="email_subject">Subject:</label>
+                      <label for="email_Body">Body:</label>
                     </div>
                   </div>
 
                   <button
                     className="btn waves-effect waves-light"
-                    type="submit"
-                    name="action">
+                    type="submit">
                     Send Email
                     <i className="material-icons right">send</i>
                   </button>
