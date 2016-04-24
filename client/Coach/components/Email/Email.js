@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from 'react-s-alert';
 import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.js';
 import Loading from '../../../common/components/Loading/Loading.js';
 
