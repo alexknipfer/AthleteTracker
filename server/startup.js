@@ -1,5 +1,7 @@
 Meteor.startup(function() {
 
+  //heroku test
+
   if (Meteor.users.find().count() === 0) {
     let userAdmin = Accounts.createUser({
       username: "admin",
