@@ -49,10 +49,13 @@ const AddStudentData = new ValidatedMethod({
     position: {
       type: String,
     },
+    firstLast: {
+      type: String,
+    },
 
   }).validator(),
   run({
-    firstname, lastname, gradYear, gpa, act, dob, phoneNumber, email, city, state, height, weight, speedHalf, speedFull, handOrientation, position
+    firstname, lastname, gradYear, gpa, act, dob, phoneNumber, email, city, state, height, weight, speedHalf, speedFull, handOrientation, position, firstLast
   }) {
     StudentDataCoach.insert({
       firstname: firstname,
@@ -71,6 +74,7 @@ const AddStudentData = new ValidatedMethod({
       speedFull: speedFull,
       handOrientation: handOrientation,
       position: position,
+      firstLast: firstLast,
       createdBy: this.userId
     });
     TempStudents.insert({
@@ -90,6 +94,7 @@ const AddStudentData = new ValidatedMethod({
       speedFull: speedFull,
       handOrientation: handOrientation,
       position: position,
+      firstLast: firstLast,
       createdBy: this.userId
     });
   }

@@ -22,8 +22,9 @@ export default class AddStudentCoach extends React.Component{
     const speedFull = this.refs.speedFull.value;
     const handOrientation = this.refs.handOrientation.value;
     const position = this.refs.position.value;
+    const firstLast = firstname + " " + lastname;
 
-    Meteor.call("AddStudentData", {firstname, lastname, gradYear, gpa, act, dob, phoneNumber, email, city, state, height, weight, speedHalf, speedFull, handOrientation, position}, (error) => {
+    Meteor.call("AddStudentData", {firstname, lastname, gradYear, gpa, act, dob, phoneNumber, email, city, state, height, weight, speedHalf, speedFull, handOrientation, position, firstLast}, (error) => {
       if(error){
         Alert.error(error.reason, {
           position: 'bottom',
