@@ -90,3 +90,7 @@ body{
   margin-top: 50px;
   padding: 10px;
 }
+
+nav .nav-wrapper form, nav .nav-wrapper form .input-field{
+height: 100%;
+}
