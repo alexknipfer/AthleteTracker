@@ -1,6 +1,7 @@
 import React from 'react';
 import Alert from 'react-s-alert';
 import Unauthorized from '../../../common/components/Unauthorized/Unauthorized.js';
+import Loading from '../../../common/components/Loading/Loading.js';
 
 export default class AddCoach extends React.Component{
   handleSubmit(e){
@@ -43,7 +44,13 @@ export default class AddCoach extends React.Component{
   }
 
   render(){
-    if(Roles.userIsInRole(Meteor.userId(), "admin")){
+    if(Meteor.loggingIn()){
+      return(
+        <Loading />
+      );
+    }
+
+    else if(Roles.userIsInRole(Meteor.userId(), "admin")){
       return(
         <div className="row">
           <div className="col s12 m12 l12">
