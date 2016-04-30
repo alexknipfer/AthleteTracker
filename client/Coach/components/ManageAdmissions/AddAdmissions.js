@@ -11,25 +11,35 @@ export default class AddAdmissions extends React.Component{
     const admissionsLastName = this.refs.admissionsLastName.value;
     const admissionsEmail = this.refs.admissionsEmail.value;
     const admissionsPassword = this.refs.admissionsPassword.value;
+    const confirmAdmissionsPassword = this.refs.confirmAdmissionsPassword.value;
 
-    Meteor.call("AddAdmissions", {admissionsUserName, admissionsFirstName, admissionsLastName, admissionsEmail, admissionsPassword}, (error) => {
-      if(error){
-        Alert.error(error.reason, {
-            position: 'bottom',
-            effect: 'stackslide',
-            timeout: 3000
-        });
-      }
+    if(admissionsPassword == confirmAdmissionsPassword){
+      Meteor.call("AddAdmissions", {admissionsUserName, admissionsFirstName, admissionsLastName, admissionsEmail, admissionsPassword}, (error) => {
+        if(error){
+          Alert.error(error.reason, {
+              position: 'bottom',
+              effect: 'stackslide',
+              timeout: 3000
+          });
+        }
 
-      else{
-        FlowRouter.go("/currentAdmissions");
-        Alert.success("Admissions Agent Added Successfully!", {
-            position: 'bottom',
-            effect: 'stackslide',
-            timeout: 3000
-        });
-      }
-    });
+        else{
+          FlowRouter.go("/currentAdmissions");
+          Alert.success("Admissions Agent Added Successfully!", {
+              position: 'bottom',
+              effect: 'stackslide',
+              timeout: 3000
+          });
+        }
+      });
+    }
+    else{
+      Alert.error("The two passwords you entered should match.", {
+        position: 'bottom',
+        effect: 'stackslide',
+        timeout: 3000
+      });
+    }
   }
 
   render(){
@@ -58,7 +68,7 @@ export default class AddAdmissions extends React.Component{
                   </div>
 
                   <div className="row">
-                    <div className="col s12">
+                    <div className="col s12 m6 l6">
                       <input
                         type="text"
                         ref="admissionsFirstName"
@@ -67,10 +77,8 @@ export default class AddAdmissions extends React.Component{
                         minLength={2}
                         required />
                     </div>
-                  </div>
 
-                  <div className="row">
-                    <div className="col s12">
+                    <div className="col s12 m6 l6">
                       <input
                         type="text"
                         ref="admissionsLastName"
@@ -99,6 +107,18 @@ export default class AddAdmissions extends React.Component{
                         ref="admissionsPassword"
                         className="validate"
                         placeholder="Password"
+                        minLength={2}
+                        required />
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="col s12">
+                      <input
+                        type="password"
+                        ref="confirmAdmissionsPassword"
+                        className="validate"
+                        placeholder="Confirm Password"
                         minLength={2}
                         required />
                     </div>
