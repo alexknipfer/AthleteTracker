@@ -11,25 +11,35 @@ export default class AddCoach extends React.Component{
     const coachLastName = this.refs.coachLastName.value;
     const coachEmail = this.refs.coachEmail.value;
     const coachPassword = this.refs.coachPassword.value;
+    const confirmCoachPassword = this.refs.confirmCoachPassword.value;
 
-    Meteor.call("AddCoach", {coachUserName, coachFirstName, coachLastName, coachEmail, coachPassword}, (error) => {
-      if(error){
-        Alert.error(error.reason, {
-            position: 'bottom',
-            effect: 'stackslide',
-            timeout: 3000
-        });
-      }
+    if(coachPassword == confirmCoachPassword){
+      Meteor.call("AddCoach", {coachUserName, coachFirstName, coachLastName, coachEmail, coachPassword}, (error) => {
+        if(error){
+          Alert.error(error.reason, {
+              position: 'bottom',
+              effect: 'stackslide',
+              timeout: 3000
+          });
+        }
 
-      else{
-        FlowRouter.go("/currentCoaches");
-        Alert.success("Coach Added Successfully!", {
-            position: 'bottom',
-            effect: 'stackslide',
-            timeout: 3000
-        });
-      }
-    });
+        else{
+          FlowRouter.go("/currentCoaches");
+          Alert.success("Coach Added Successfully!", {
+              position: 'bottom',
+              effect: 'stackslide',
+              timeout: 3000
+          });
+        }
+      });
+    }
+    else{
+      Alert.error("The two passwords you entered should match.", {
+        position: 'bottom',
+        effect: 'stackslide',
+        timeout: 3000
+      });
+    }
   }
 
   render(){
@@ -58,7 +68,7 @@ export default class AddCoach extends React.Component{
                   </div>
 
                   <div className="row">
-                    <div className="col s12">
+                    <div className="col s12 m6 l6">
                       <input
                         type="text"
                         ref="coachFirstName"
@@ -67,10 +77,8 @@ export default class AddCoach extends React.Component{
                         minLength={2}
                         required />
                     </div>
-                  </div>
 
-                  <div className="row">
-                    <div className="col s12">
+                    <div className="col s12 m6 l6">
                       <input
                         type="text"
                         ref="coachLastName"
@@ -100,6 +108,18 @@ export default class AddCoach extends React.Component{
                         ref="coachPassword"
                         className="validate"
                         placeholder="Password"
+                        minLength={2}
+                        required />
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="col s12">
+                      <input
+                        type="password"
+                        ref="confirmCoachPassword"
+                        className="validate"
+                        placeholder="Confirm Password"
                         minLength={2}
                         required />
                     </div>
