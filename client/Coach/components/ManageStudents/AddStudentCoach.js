@@ -141,7 +141,7 @@ export default class AddStudentCoach extends React.Component{
                   <div className="row">
                     <div className="col s12 m4 l4">
                       <input
-                        type="text"
+                        type="email"
                         ref="email"
                         className="validate"
                         placeholder="Email"
