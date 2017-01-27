@@ -14,8 +14,8 @@ and track data on potential athletic recruits.
 
 ## Built With
 
-* Meteor (JavaScript)
-* React (JavaScript)
+* Meteor JS
+* React JS
 * HTML
 * CSS
 
